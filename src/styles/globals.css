@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer utilities {
   .flex-center {
     display: flex;
@@ -15,12 +14,13 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  .li-center{
-    height: min-content;
+  .li-center {
+    height: 100%;
+    display: flex;
+
+    align-items: center;
+
     cursor: pointer;
-   
   }
-  .li-center:hover{
-    background-color: #b15757;
-  }
+  
 }

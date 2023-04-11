@@ -10,13 +10,13 @@ const navlinks =[
 const Header = () => {
   const [dropdown, setDropdown] = useState(null);
   return (
-    <>
+    <div>
       <Percentoff />
-      <div className="Header h-[5rem] bg-green-300 flex justify-between items-center relative">
-        <div className="ml-8 text-3xl text-black bg-blue-200 w-min">
+      <div className="Header h-[5rem]  flex justify-between items-center bg-green-300 relative">
+        <div className="ml-8 text-3xl text-black pr-1 bg-blue-200 w-min">
           KEYPINI
         </div>
-        <div className="flex items-center h-full text-blue-800 list-none links gap-14 absolute-center">
+        <div className="flex items-center h-full text-blue-800 list-none links gap-14 ">
           {navlinks.map((link,index) => (
              <li key={index} className="transition-all li-center hover:text-yellow-900" href="/">
              {link.name}
@@ -24,7 +24,7 @@ const Header = () => {
           ))}
           
         </div>
-        <div className="flex gap-3 mr-8 w-min">
+        <div className="flex  mr-8 w-min gap-3">
           <button className="transition-all hover:scale-125">
             <svg
               stroke="currentColor"
@@ -42,7 +42,7 @@ const Header = () => {
             </svg>
           </button>
 
-          < button className="transition-all hover:scale-125">
+          <button className="transition-all hover:scale-125">
             {" "}
             <svg
               stroke="currentColor"
@@ -58,8 +58,8 @@ const Header = () => {
           </button>
         </div>
       </div>
-    </>
-  );
-};
+    </div>
+  )
+}
 
 export default Header;

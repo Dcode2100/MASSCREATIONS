@@ -48,7 +48,7 @@ const Footer = () => {
   return (
     <div className="h-min bg-gray-900 text-gray-500">
       <div className="mx-auto px-4 ">
-        <div className="g-blue-500 grid-col-4 container mx-auto w-min grid-flow-row py-5">
+        <div className=" py-5 bg-blue-500 grid-col-4 container mx-auto w-min grid-flow-row ">
           {/* This is array of nested object and array  */}
           {footerlinks1.map((footerlink, index) => {
             return (
@@ -57,8 +57,8 @@ const Footer = () => {
                 {footerlink.sublinks &&
                   footerlink.sublinks.map((sublink, index) => {
                     return (
-                      <ul>
-                        <li key={index} href={sublink.link}>
+                      <ul key={index}>
+                        <li  href={sublink.link}>
                           {sublink.title}
                         </li>
                       </ul>

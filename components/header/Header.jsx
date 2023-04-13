@@ -1,30 +1,34 @@
 import React, { useState } from "react";
 import Percentoff from "./Percentoff";
 
-const navlinks =[
-  {name: "Home", link: "/"},
-  {name: "Product", link: "/"},
-  {name: "Service", link: "/"},
-  {name: "Contact", link: "/"},
-]
+const navlinks = [
+  { name: "Home", link: "/" },
+  { name: "Product", link: "/product" },
+  { name: "Service", link: "/service" },
+  { name: "Contact", link: "/contact" },
+
+];
 const Header = () => {
   const [dropdown, setDropdown] = useState(null);
   return (
     <div>
       <Percentoff />
-      <div className="Header h-[5rem]  flex justify-between items-center bg-green-300 relative">
-        <div className="ml-8 text-3xl text-black pr-1 bg-blue-200 w-min">
+      <div className="Header relative  flex h-[5rem] items-center justify-between bg-green-300">
+        <div className="ml-8 w-min bg-blue-200 pr-1 text-3xl text-black">
           KEYPINI
         </div>
-        <div className="flex items-center h-full text-blue-800 list-none links gap-14 ">
-          {navlinks.map((link,index) => (
-             <li key={index} className="transition-all li-center hover:text-yellow-900" href="/">
-             {link.name}
-           </li>
+        <div className="links flex h-full list-none items-center gap-14 text-blue-800 ">
+          {navlinks.map((link, index) => (
+            <a
+              key={index}
+              className="li-center relative transition-all after:bg-blue-green after:absolute after:bg-red-600 cursor-pointer"
+              href={link.link}
+            >
+              {link.name}
+            </a>
           ))}
-          
         </div>
-        <div className="flex  mr-8 w-min gap-3">
+        <div className="mr-8  flex w-min gap-3">
           <button className="transition-all hover:scale-125">
             <svg
               stroke="currentColor"
@@ -59,7 +63,7 @@ const Header = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Header;

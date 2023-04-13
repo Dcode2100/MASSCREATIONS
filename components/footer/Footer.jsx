@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import FooterButton from "../common/Footerbutton";
-
+import Link from "next/link";
+import {AiOutlineCopyright} from "react-icons/ai"
 const footerlinks1 = [
   {
     title: "NEED HELP",
@@ -46,21 +47,24 @@ const Footer = () => {
     console.log(footerlinks1.sublinks);
   }, []);
   return (
-    <div className="h-min bg-gray-900 text-gray-500">
-      <div className="mx-auto px-4 ">
-        <div className=" py-5 bg-blue-500 grid-col-4 container mx-auto w-min grid-flow-row ">
+    <div className="footer-container bg-gray-900  ">
+      <div className=" flex h-min items-center justify-center  ">
+        <div className="flex w-[90%] flex-wrap justify-between gap-9 pb-20 pt-7 ">
           {/* This is array of nested object and array  */}
           {footerlinks1.map((footerlink, index) => {
             return (
-              <div key={index} className="text-xs text-white">
-                <h1 className="text-xl font-bold">{footerlink.title}</h1>
+              <div key={index} className=" w-min whitespace-nowrap text-white">
+                <h1 className=" mb-3 text-xl font-bold ">{footerlink.title}</h1>
                 {footerlink.sublinks &&
                   footerlink.sublinks.map((sublink, index) => {
                     return (
                       <ul key={index}>
-                        <li  href={sublink.link}>
+                        <a
+                          className="cursor-pointer text-[0.8rem] text-gray-400 transition-all hover:text-white"
+                          href={sublink.link}
+                        >
                           {sublink.title}
-                        </li>
+                        </a>
                       </ul>
                     );
                   })}
@@ -68,6 +72,10 @@ const Footer = () => {
             );
           })}
         </div>
+      </div>
+      <div className="copyright bg-dark-blue flex h-min w-min items-center whitespace-nowrap pb-6 pl-6 text-[0.8rem] text-gray-300 ">
+        <AiOutlineCopyright />{" "}
+        <p className=" ml-1 text-gray-300">2022-2023 KEIPAL | ALL RIGHTS RESERVED</p>
       </div>
     </div>
   );

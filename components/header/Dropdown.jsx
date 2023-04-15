@@ -6,7 +6,7 @@ const navitems = [
 const Dropdown = () => {
   return (
     <div className='dropdown h-[50vh] bg-gray-400'>
-        
+         
     </div>
   )
 }

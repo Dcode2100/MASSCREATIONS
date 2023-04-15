@@ -2,34 +2,102 @@ import React, { useState } from "react";
 import Percentoff from "./Percentoff";
 
 const navlinks = [
-  { name: "Home", link: "/" },
-  { name: "Product", link: "/product" },
-  { name: "Service", link: "/service" },
-  { name: "Contact", link: "/contact" },
+  { title: "HOME", path: "/" },
+  {
+    title: "PRODUCTS",
+    path: "/about",
+    submenu: [
+      {
+        heading: "RSS Party",
+        dubmenu: [
+          { title: "OUR STORY", path: "/about" },
+          { title: "MISSION & VISION", path: "/missionvision" },
+          { title: "OBJECTIVE", path: "/objective" },
+          { title: "LEADERSHIP", path: "/leadership" },
+        ],
+      },
 
+      {
+        heading: "MEDIA",
+        dubmenu: [
+          { title: "GALLERY", path: "/gallery" },
+          { title: "NEWS ARTICLES", path: "/newsarticles" },
+          { title: "PRESS RELEASE", path: "/pressrelease" },
+        ],
+      },
+
+      {
+        heading: "OUR WINGS",
+        dubmenu: [
+          { title: "KISAN", path: "/wing/kisan" },
+          { title: "MAHILA", path: "/wing/mahila" },
+          { title: "YUVA", path: "/wing/yuva" },
+          { title: "S.C", path: "/wing/sc" },
+          { title: "S.T", path: "/wing/st" },
+          { title: "OBC", path: "/wing/obc" },
+          { title: "MINORITY", path: "/wing/minority" },
+        ],
+      },
+    ],
+  },
+  {
+    title: "SERVICE",
+    path: "/becomeamember",
+    submenu: [
+      {
+        heading: "JOIN THE MOMENT",
+        dubmenu: [
+          {
+            title: "BECOME A MEMBER",
+            path: "/becomeamember",
+            hovermenu: [
+              {
+                title: "Perks of becoming a member",
+                para: " good thing and good things",
+                img: "https://www.shutterstock.com/image-photo/keep-simple-word-wooden-blocks-260nw-1604630542.jpg",
+              },
+            ],
+          },
+          {
+            title: "BECOME A VOLUNTEER",
+            path: "/becomeavolunteer",
+            hovermenu: [
+              {
+                title: "Perks of becoming a volunteer",
+                para: " good things",
+                img: "https://www.shutterstock.com/image-photo/keep-simple-word-wooden-blocks-260nw-1604630542.jpg",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "CONTACT US",
+    path: "/contact",
+  },
 ];
+
 const Header = () => {
   const [dropdown, setDropdown] = useState(null);
   return (
     <div>
-      <Percentoff />
-      <div className="Header relative  flex h-[5rem] items-center justify-between bg-green-300">
-        <div className="ml-8 w-min bg-blue-200 pr-1 text-3xl text-black">
-          KEYPINI
-        </div>
-        <div className="links flex h-full list-none items-center gap-14 text-blue-800 ">
+      <div className="Header relative  flex h-[3.5rem] items-center justify-between bg-green-300">
+        <div className="ml-8 w-min  pr-1 text-2xl text-black">KEYPINI</div>
+        <div className="links flex h-full list-none items-center gap-14  ">
           {navlinks.map((link, index) => (
             <a
               key={index}
-              className="li-center relative transition-all after:bg-blue-green after:absolute after:bg-red-600 cursor-pointer"
+              className="li-center text-[0.9rem] relative cursor-pointer text-blue-800  h-full flex items-center justify-center hover:underline "
               href={link.link}
             >
-              {link.name}
+              {link.title}
             </a>
           ))}
         </div>
         <div className="mr-8  flex w-min gap-3">
-          <button className="transition-all hover:scale-125">
+          <button className="transition-all hover:scale-110">
             <svg
               stroke="currentColor"
               fill="none"
@@ -45,8 +113,7 @@ const Header = () => {
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
           </button>
-
-          <button className="transition-all hover:scale-125">
+          <button className="transition-all hover:scale-110">
             {" "}
             <svg
               stroke="currentColor"

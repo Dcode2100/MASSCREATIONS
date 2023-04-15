@@ -40,6 +40,7 @@ const footerlinks1 = [
       { title: "Timing - 10AM-8PM" },
     ],
   },
+  
 ];
 
 const Footer = () => {

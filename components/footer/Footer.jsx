@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import FooterButton from "../common/Footerbutton";
+
 import Link from "next/link";
 import {AiOutlineCopyright} from "react-icons/ai"
 const footerlinks1 = [

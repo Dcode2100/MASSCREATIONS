@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState , useEffect } from 'react'
 import { navlinks } from '../common'
 import { BsCart } from "react-icons/bs";
 import { AiOutlineUser } from 'react-icons/ai';
@@ -6,18 +6,19 @@ import Dropdown from './Dropdown'
 import Menutoggle from './Menutoggle'
 
 const Headerbottom = () => {
-    const [drop,setDrop] = React.useState(null)
+    const [drop,setDrop] = React.useState(null);
+    
   return (
     <div>
       <div className="Header relative  flex h-[3.5rem] items-center justify-between bg-green-300">
-        <div className="ml-8 w-min  pr-1 text-2xl text-black">KEYPINI</div>
-        <div className="links flex h-full list-none items-center gap-14  ">
+        <div className="ml-8 w-min  pr-1 text-2xl">KEYPINI</div>
+        <div className="links flex h-full list-none items-center">
           {navlinks.map((link, index) => (
             <Menutoggle
-              index={index}
-              items={link}
-              setDrop={setDrop}
               key={index}
+              index={index}
+              setDrop={setDrop}
+              items={link}
             />
           ))}
         </div>
@@ -32,6 +33,7 @@ const Headerbottom = () => {
           />
         </div>
       </div>
+
       {drop && (
         <div
           className="drop"
@@ -42,7 +44,7 @@ const Headerbottom = () => {
             setDrop(null);
           }}
         >
-          <Dropdown items={navlinks[drop]} />
+          <Dropdown  items={navlinks[drop]} />
         </div>
       )}
     </div>

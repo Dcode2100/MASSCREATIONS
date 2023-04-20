@@ -1,28 +1,25 @@
-import React from 'react'
+import React from "react";
 
-const Menutoggle = ({index, items, setDrop}) => {
+const Menutoggle = ({ items, index, setDrop }) => {
   return (
     <div
-        className=""
+      className="relative h-full w-full  whitespace-nowrap px-8 xs:hidden"
       onMouseEnter={() => {
         items.submenu && setDrop(index);
-        console.log(index);
       }}
       onMouseLeave={() => {
         items.submenu && setDrop(null);
-        console.log("leave");
       }}
-      
     >
       <a
         key={index}
-        className="li-center relative flex h-full cursor-pointer  items-center justify-center text-[0.9rem] text-blue-800 hover:underline "
+        className="h-full w-full flex items-center justify-center text-md text-black"
         href={items.path}
       >
         {items.title}
       </a>
     </div>
   );
-}
+};
 
-export default Menutoggle
+export default Menutoggle;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import Link from "next/link";
-import {AiOutlineCopyright} from "react-icons/ai"
+import { AiOutlineCopyright } from "react-icons/ai";
 const footerlinks1 = [
   {
     title: "NEED HELP",
@@ -40,13 +40,9 @@ const footerlinks1 = [
       { title: "Timing - 10AM-8PM" },
     ],
   },
-  
 ];
 
 const Footer = () => {
-  useEffect(() => {
-    console.log(footerlinks1.sublinks);
-  }, []);
   return (
     <div className="footer-container bg-gray-900  ">
       <div className=" flex h-min items-center justify-center  ">
@@ -76,7 +72,9 @@ const Footer = () => {
       </div>
       <div className="copyright bg-dark-blue flex h-min w-min items-center whitespace-nowrap pb-6 pl-6 text-[0.8rem] text-gray-300 ">
         <AiOutlineCopyright />{" "}
-        <p className=" ml-1 text-gray-300">2022-2023 KEIPAL | ALL RIGHTS RESERVED</p>
+        <p className=" ml-1 text-gray-300">
+          2022-2023 KEIPAL | ALL RIGHTS RESERVED
+        </p>
       </div>
     </div>
   );

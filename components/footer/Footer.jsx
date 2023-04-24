@@ -48,16 +48,25 @@ const Footer = () => {
       <div className=" flex h-min items-center justify-center  ">
         <div className="flex w-[90%] flex-wrap justify-between gap-9 pb-20 pt-7 ">
           {/* This is array of nested object and array  */}
-          {footerlinks1.map((footerlink, index) => {
+          {footerlinks1.map((footerlink, indexT) => {
             return (
-              <div key={index} className=" w-min whitespace-nowrap text-white">
-                <h1 className=" mb-3 text-xl font-bold ">{footerlink.title}</h1>
+              <div
+                key={indexT}
+                className=" w-min whitespace-nowrap text-white max-xs:w-full max-xs:flex-row max-xs:justify-center  "
+              >
+                <h1 className=" mb-3 text-xl font-bold max-xs:text-center  ">
+                  {footerlink.title}
+                </h1>
                 {footerlink.sublinks &&
                   footerlink.sublinks.map((sublink, index) => {
                     return (
-                      <ul key={index}>
+                      <ul key={index} className="max-xs:text-center ">
                         <a
-                          className="cursor-pointer text-[0.8rem] text-gray-400 transition-all hover:text-white"
+                          className={`cursor-pointer text-[0.8rem] text-gray-400 transition-all hover:text-white  ${
+                            indexT === 2 && index === 0
+                              ? "flex w-full max-xs:items-center max-xs:justify-center max-xs:whitespace-normal max-xs:text-center"
+                              : ""
+                          }`}
                           href={sublink.link}
                         >
                           {sublink.title}
@@ -70,9 +79,9 @@ const Footer = () => {
           })}
         </div>
       </div>
-      <div className="copyright bg-dark-blue flex h-min w-min items-center whitespace-nowrap pb-6 pl-6 text-[0.8rem] text-gray-300 ">
+      <div className="copyright bg-blue-800 flex h-min w-min items-center max-xs:w-full max-xs:flex max-xs: justify-center whitespace-nowrap pb-6 pl-6 text-[0.8rem] text-gray-300 ">
         <AiOutlineCopyright />{" "}
-        <p className=" ml-1 text-gray-300">
+        <p className=" ml-1 text-gray-300 ">
           2022-2023 KEIPAL | ALL RIGHTS RESERVED
         </p>
       </div>

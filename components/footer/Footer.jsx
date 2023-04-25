@@ -79,7 +79,7 @@ const Footer = () => {
           })}
         </div>
       </div>
-      <div className="copyright bg-blue-800 flex h-min w-min items-center max-xs:w-full max-xs:flex max-xs: justify-center whitespace-nowrap pb-6 pl-6 text-[0.8rem] text-gray-300 ">
+      <div className="copyright flex h-min w-min items-center max-xs:w-full max-xs:flex max-xs: justify-center whitespace-nowrap pb-6 pl-6 text-[0.8rem] text-gray-300 ">
         <AiOutlineCopyright />{" "}
         <p className=" ml-1 text-gray-300 ">
           2022-2023 KEIPAL | ALL RIGHTS RESERVED

@@ -19,12 +19,12 @@ const Headertop = () => {
     <div className="relative  flex h-12 items-center justify-center bg-green-600 px-4">
       <div className=" relative w-[100%] ">
         <Slider {...settings}>
-          <div className=" w-full  text-center">
-            <h3>
+          <div className=" w-full text-center">
+            <h3 className="max-xs:text-[0.8rem]">
               The sale is on check out the latest offers in all our sections
             </h3>
           </div>
-          <div className=" w-full  text-center">
+          <div className=" w-full text-center">
             <h3>Checkout the latest deals going on</h3>
           </div>
         </Slider>

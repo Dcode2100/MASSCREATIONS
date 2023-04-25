@@ -1,17 +1,33 @@
-import React, { useState , useEffect } from 'react'
-import { navlinks } from '../common'
+import React, { useState, useEffect } from "react";
+import { navlinks } from "../common";
 import { BsCart } from "react-icons/bs";
-import { AiOutlineUser } from 'react-icons/ai';
-import Dropdown from './Dropdown'
-import Menutoggle from './Menutoggle'
+import { BiMenu } from "react-icons/bi";
+import { AiOutlineUser } from "react-icons/ai";
+import Dropdown from "./Dropdown";
+import Menutoggle from "./Menutoggle";
+import Sidenav from "./Sidenav";
 
-const Headerbottom = () => {
-    const [drop,setDrop] = React.useState(null);
-    
+const Headerbottom = ({smsidemenu,setSmsidemenu}) => {
+  const [drop, setDrop] = React.useState(null);
+
+
   return (
-    <div>
-      <div className="Header relative  flex h-[3.5rem] items-center justify-between bg-green-300">
-        <div className="ml-8 w-min  pr-1 text-2xl">KEYPINI</div>
+    <div >
+      <div className="Header relative  flex h-[3.5rem] items-center justify-between bg-green-300  ">
+        <div className="ml-5 flex w-min flex-row items-center  gap-4 pr-1  text-2xl">
+          
+          <div className="small-screen-menu md:hidden">
+          { !smsidemenu && 
+            <button
+              className="flex transition-all"
+              onClick={() => setSmsidemenu((prev) => !prev)}
+            >
+              <BiMenu style={{ fontSize: "1.7rem" }} />
+            </button>
+          }
+          </div>
+          <h1 >KEYPINI</h1>
+        </div>
         <div className="links flex h-full list-none items-center">
           {navlinks.map((link, index) => (
             <Menutoggle
@@ -22,7 +38,7 @@ const Headerbottom = () => {
             />
           ))}
         </div>
-        <div className="mr-8  flex w-min gap-3">
+        <div className="mr-5  flex w-min gap-5">
           <BsCart
             style={{ fontSize: "1.2rem" }}
             className="cursor-pointer transition-all hover:scale-105"
@@ -44,11 +60,11 @@ const Headerbottom = () => {
             setDrop(null);
           }}
         >
-          <Dropdown  items={navlinks[drop]} />
+          <Dropdown items={navlinks[drop]} />
         </div>
       )}
     </div>
   );
-}
+};
 
-export default Headerbottom
+export default Headerbottom;

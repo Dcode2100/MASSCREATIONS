@@ -1,71 +1,49 @@
 export const navlinks = [
-  { title: "HOME", path: "/" },
+  { title: "LATEST", path: "/" },
   {
-    title: "PRODUCTS",
-    path: "/about",
+    title: "COLLECTIONS",
+    path: "/collections",
     submenu: [
       {
-        heading: "RSS Party",
+        title: "KEYCHAINS",
         dubmenu: [
-          { title: "OUR STORY", path: "/about" },
-          { title: "MISSION & VISION", path: "/missionvision" },
-          { title: "OBJECTIVE", path: "/objective" },
-          { title: "LEADERSHIP", path: "/leadership" },
+          { title: "METAL KEYCHAINS", path: "/metal" },
+          { title: "RUBBER KEYCHAINS", path: "/rubber" },
+          { title: "3D KEYCHAINS", path: "/3dkeychain" },
+          { title: "MOVIE CHARACTERS", path: "/moviecharacter" },
+          { title: "CARTOON ", path: "/cartoon" },
+          { title: "FOR BOYFRIEND/GIRLFRIEND", path: "/bfgf" },
+          { title: "GOD", path: "/god" },
         ],
       },
 
       {
-        heading: "MEDIA",
+        title: "SPECIAL BEST SELLER",
         dubmenu: [
-          { title: "GALLERY", path: "/gallery" },
-          { title: "NEWS ARTICLES", path: "/newsarticles" },
-          { title: "PRESS RELEASE", path: "/pressrelease" },
+          { title: "MARVAL", path: "/marvel" },
+          { title: "DISNIY", path: "/disniy" },
+          { title: "CARTOONS", path: "/cartoons" },
         ],
       },
 
       {
-        heading: "OUR WINGS",
+        title: "GIFT HAMPERS",
         dubmenu: [
-          { title: "KISAN", path: "/wing/kisan" },
-          { title: "MAHILA", path: "/wing/mahila" },
-          { title: "YUVA", path: "/wing/yuva" },
-          { title: "S.C", path: "/wing/sc" },
-          { title: "S.T", path: "/wing/st" },
-          { title: "OBC", path: "/wing/obc" },
-          { title: "MINORITY", path: "/wing/minority" },
+          { title: "MARVAL FANHOUSE", path: "/marvalfanhouse " },
+          { title: "DIsNIY FANHOUSE", path: "/diniyfanhouse " },
         ],
       },
     ],
   },
   {
-    title: "SERVICE",
-    path: "/becomeamember",
+    title: "COMBOS/BEST SELLERS",
+    path: "/combos",
     submenu: [
       {
-        heading: "JOIN THE MOMENT",
+        title: "GIFT HAMPERS",
         dubmenu: [
-          {
-            title: "BECOME A MEMBER",
-            path: "/becomeamember",
-            hovermenu: [
-              {
-                title: "Perks of becoming a member",
-                para: " good thing and good things",
-                img: "https://www.shutterstock.com/image-photo/keep-simple-word-wooden-blocks-260nw-1604630542.jpg",
-              },
-            ],
-          },
-          {
-            title: "BECOME A VOLUNTEER",
-            path: "/becomeavolunteer",
-            hovermenu: [
-              {
-                title: "Perks of becoming a volunteer",
-                para: " good things",
-                img: "https://www.shutterstock.com/image-photo/keep-simple-word-wooden-blocks-260nw-1604630542.jpg",
-              },
-            ],
-          },
+          { title: "MARVAL FANHOUSE", path: "/marvalfanhouse " },
+          { title: "DIsNIY FANHOUSE", path: "/diniyfanhouse " },
         ],
       },
     ],
@@ -73,5 +51,30 @@ export const navlinks = [
   {
     title: "CONTACT US",
     path: "/contact",
+    submenu: [
+      {
+        title: "ORDERS",
+        dubmenu: [
+          { title: "ORDER STATUS", path: "/orderstatus" },
+          { title: "TRACK ORDER", path: "/trackorder" },
+          { title: "RETURN POLICY", path: "/returnpolicy" },
+          { title: "CANCELLATION POLICY", path: "/cancellationpolicy" },
+        ],
+      },
+      {
+        title: "PAYMENT",
+        dubmenu: [
+          { title: "PAYMENT RECEIPT", path: "/paymentrecipt" },
+          { title: "PAYMENT METHODS", path: "/paymentmethods" },
+        ],
+      },
+      {
+        title: "CONTACT US",
+        dubmenu: [
+          { title: "PHONE - 7678096369" },
+          { title: "EMAIL - dcode2100@gmail.com" },
+        ],
+      },
+    ],
   },
 ];

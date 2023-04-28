@@ -17,6 +17,8 @@ function index() {
         return;
       }
 
+      const categoriesmap = {};
+      
       // Process the results
       // const categoryMap = {};
       // categoriesAndProducts.forEach((row) => {

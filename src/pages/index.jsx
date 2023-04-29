@@ -10,7 +10,7 @@ function index() {
       // Fetch all categories and their associated products
       const { data: categoriesAndProducts, error } = await supabase
         .from("products")
-        .select("*")
+        .select("*");
 
       if (error) {
         console.error(error);
@@ -18,7 +18,7 @@ function index() {
       }
 
       const categoriesmap = {};
-      
+
       // Process the results
       // const categoryMap = {};
       // categoriesAndProducts.forEach((row) => {
@@ -54,14 +54,12 @@ function index() {
     <div>
       <h1>My Ecommerce Store</h1>
       <ul>
-        {categories.map((category) => ( 
+        {categories.map((category) => (
           <li key={category.id}>
             <h2>{category.name}</h2>
-            
           </li>
         ))}
       </ul>
-
     </div>
   );
 }

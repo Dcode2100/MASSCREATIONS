@@ -6,7 +6,7 @@ const Cards = ({carddata}) => {
     const {name,photo,description} = carddata;
   return (
     // MAKE A CARD IN WHICH THERE IS 70 COVERED WITH PHOTO AND LATER HALF WITH NAME DESCRIPTION AND ADD TO TO CART BUTTON AT BOTTOM
-    <div className="flex flex-col justify-center items-center ">
+    <div className="flex flex-col justify-center items-center h-[20rem] ">
       <div className="relative h-40 w-40">
         <Image className="absolute object-contain " href={photo} fill quality={100}/>
       </div>

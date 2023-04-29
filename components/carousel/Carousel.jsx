@@ -46,7 +46,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className="relative ">
+    <div className="relative  ">
       <Slider {...settings}>
         <div className="h-max ">
           <Cards carddata={carddata[0]} />

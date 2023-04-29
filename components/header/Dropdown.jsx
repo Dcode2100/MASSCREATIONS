@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 const Dropdown = ({ items }) => {
   return (
-    <div className="dropdown bg-black-400 absolute flex h-min w-full justify-center gap-10 bg-gray-300 px-40 py-12 pb-16">
+    <div className="dropdown bg-black-400 absolute flex h-min w-full justify-center gap-10 bg-gray-300 px-40 py-12 pb-16 z-10">
       {items.submenu &&
         items.submenu.map((sub, index) => {
           return (
@@ -28,8 +28,8 @@ const Dropdown = ({ items }) => {
           );
         })}
       <div>
-        <h1 className="ml-20 flex h-[10rem] w-[10rem] bg-yellow-300">
-          <img className="" src="/next.svg"></img>
+        <h1 className="ml-20 flex h-[10rem] bg-yellow-300">
+          <img className="" src="/sample/samp1.jpg" alt="sampleimages"></img>
         </h1>
       </div>
     </div>

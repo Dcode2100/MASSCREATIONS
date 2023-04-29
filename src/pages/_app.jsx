@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }) {
       <div className="smsidemenu">
 
       </div>
-      <Header />
+      <Header  />
       <Component {...pageProps} />
       <Footer />
     </div>

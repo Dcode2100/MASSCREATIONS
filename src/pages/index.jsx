@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { supabase } from "../../lib/supabaseClient";
+import Herosection from "../../components/home/Herosection";
 import React from "react";
 
 function index() {
@@ -61,8 +62,11 @@ function index() {
           </li>
         ))}
       </ul>
-    </div>
+      <Herosection/>
+      </div>
   );
+    
+    
 }
 
 export default index;

@@ -57,7 +57,7 @@ function index() {
         {categories.map((category) => ( 
           <li key={category.id}>
             <h2>{category.name}</h2>
-            
+            <h1>update from abhishek</h1>
           </li>
         ))}
       </ul>

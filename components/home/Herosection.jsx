@@ -1,5 +1,4 @@
 import React from "react";
-import Slider from "react-slick";
 import Cardcontainer from "../carousel/Cardcontainer";
 
 const carddata = [
@@ -9,7 +8,8 @@ const carddata = [
     name: "elephant",
     photo: "/Sample/samp1.jpg",
 
-    description: "elephant",
+    description:
+      " a statement that tells you how something or someone looks, sounds, etc. : words that describe something or someone. [count] Reporters called the scene “a disaster area,” and I think that was an accurate description.",
     alt: "elephant",
   },
   {
@@ -17,7 +17,8 @@ const carddata = [
     name: "deer",
     photo: "/Sample/samp2.jpg",
 
-    description: "deer",
+    description:
+      " a statement that tells you how something or someone looks, sounds, etc. : words that describe something or someone. [count] Reporters called the scene “a disaster area,” and I think that was an accurate description.",
     alt: "deer",
   },
   {
@@ -25,14 +26,16 @@ const carddata = [
     name: "horse",
     photo: "/Sample/samp3.jpg",
 
-    description: "horse",
+    description:
+      " a statement that tells you how something or someone looks, sounds, etc. : words that describe something or someone. [count] Reporters called the scene “a disaster area,” and I think that was an accurate description.",
     alt: "horse",
   },
   {
     id: 4,
     name: "dog",
     photo: "/Sample/samp4.jpg",
-    description: "dog",
+    description:
+      " a statement that tells you how something or someone looks, sounds, etc. : words that describe something or someone. [count] Reporters called the scene “a disaster area,” and I think that was an accurate description.",
     alt: "dog",
   },
   // add more of this objects below
@@ -40,28 +43,32 @@ const carddata = [
     id: 5,
     name: "elephant",
     photo: "/Sample/samp5.jpg",
-    description: "elephant",
+    description:
+      " a statement that tells you how something or someone looks, sounds, etc. : words that describe something or someone. [count] Reporters called the scene “a disaster area,” and I think that was an accurate description.",
     alt: "elephant",
   },
   {
     id: 6,
     name: "deer",
     photo: "/Sample/samp7.jpg",
-    description: "deer",
+    description:
+      " a statement that tells you how something or someone looks, sounds, etc. : words that describe something or someone. [count] Reporters called the scene “a disaster area,” and I think that was an accurate description.",
     alt: "deer",
   },
   {
     id: 7,
     name: "horse",
     photo: "/Sample/samp8.jpg",
-    description: "horse",
+    description:
+      " a statement that tells you how something or someone looks, sounds, etc. : words that describe something or someone. [count] Reporters called the scene “a disaster area,” and I think that was an accurate description.",
     alt: "horse",
   },
   {
     id: 8,
     name: "dog",
     photo: "/Sample/samp9.jpg",
-    description: "dog",
+    description:
+      " a statement that tells you how something or someone looks, sounds, etc. : words that describe something or someone. [count] Reporters called the scene “a disaster area,” and I think that was an accurate description.",
     alt: "dog",
   },
 ];

@@ -14,11 +14,20 @@ const Cardcopy = ({ carddata }) => {
           quality={100}
           priority
           alt="sampleimage"
+          sizes="(max-width: 768px) height:100%,
+              (max-width: 1200px) height:100%,
+              33vw"
         />
-        <div className="absolute bottom-0 right-0 flex h-[80%] w-full flex-col bg-gradient-to-b from-transparent items-end justify-end p-8 text-white to-black opacity-[100%] ">
-          <h1 className="text-3xl font-bold uppercase mb-4 ">{carddata.name}</h1>
-          <p className="text-[1rem] font-light text-gray-300 opacity-80
-           text-justify tracking-[-0.6px] leading-[1rem]  ">{carddata.description}</p>
+        <div className="absolute bottom-0 right-0 flex h-[80%] w-full flex-col items-end justify-end bg-gradient-to-b from-transparent to-black p-8 text-white opacity-[100%] ">
+          <h1 className="mb-4 text-3xl font-bold uppercase ">
+            {carddata.name}
+          </h1>
+          <p
+            className="text-justify text-[1rem] font-light leading-[1rem]
+           tracking-[-0.6px] text-gray-300 opacity-80  "
+          >
+            {carddata.description}
+          </p>
         </div>
       </div>
 

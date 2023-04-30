@@ -1,12 +1,9 @@
-import React from "react";
-import Carousel from "../../components/carousel/carousel";
+import React from 'react'
 
 const collections = () => {
   return (
-    <div className="h-[10rem]">
-      <Carousel />
-    </div>
-  );
-};
+    <div>collections</div>
+  )
+}
 
-export default collections;
+export default collections

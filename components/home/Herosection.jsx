@@ -77,8 +77,8 @@ const SamplePrevArrow = (props) => {
   const { className, style, onClick } = props;
   return (
     <div
-      className={`absolute top-1/2  transform  ${className} fontsize-[2rem]`}
-      style={{ display: "block", background: "green", left: "0" }}
+      className={` hero-prev-arrow absolute top-1/2  transform  ${className} fontsize-[2rem]`}
+      style={{ display: "block", background: "green", left: "" }}
       onClick={onClick}
     />
   );
@@ -88,8 +88,8 @@ const SampleNextArrow = (props) => {
   const { className, style, onClick } = props;
   return (
     <div
-      className={`absolute top-1/2 transform  ${className} `}
-      style={{ ...style, display: "block", background: "red", right: "0" }}
+      className={`hero-next-arrow absolute top-1/2 transform  ${className} `}
+      style={{ ...style, display: "block", background: "red", right: "" }}
       onClick={onClick}
     />
   );

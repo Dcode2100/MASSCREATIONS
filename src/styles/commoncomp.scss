@@ -1,0 +1,27 @@
+.artistic-button {
+    p {
+        position: relative;
+        z-index: 1;
+        color: black;
+    }
+    svg {
+        z-index: 1;
+        color: black;
+    }
+}
+.artistic-button::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background-color: white;
+    transition: height 0.3s ease;
+    z-index: 0;
+}
+
+.artistic-button:hover::after {
+    height: 100%;
+    top: 0;
+}

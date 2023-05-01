@@ -3,9 +3,13 @@ import { BsArrowUpRight } from "react-icons/bs";
 
 const Buttonone = ({ title }) => {
   return (
-    <div className="relative m-auto mt-6 flex w-min items-center gap-2 rounded-lg bg-blue-600 px-3 py-[0.5rem] text-[0.9rem]">
-      <button className="w-min whitespace-nowrap after:h-full after:bg-black ">{title}</button>
-      <BsArrowUpRight style={{ fontSize: "0.9rem" }} />
+    <div className="absolute bottom-0 right-0 pr-8 pb-3">
+      <div className=" hover:text-white gap-2 artistic-button relative flex items-center bg-green-500 px-4 py-2 text-black transition-all duration-200 hover:bg-blue-600">
+        <button>
+          <p className="z-10">SHOP NOW</p>
+        </button>
+        <BsArrowUpRight style={{ fontSize: "0.9rem" }} />
+      </div>
     </div>
   );
 };

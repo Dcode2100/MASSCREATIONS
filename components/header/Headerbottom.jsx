@@ -12,21 +12,20 @@ const Headerbottom = ({smsidemenu,setSmsidemenu}) => {
 
 
   return (
-    <div >
+    <div>
       <div className="Header relative  flex h-[3.5rem] items-center justify-between bg-green-300  ">
         <div className="ml-5 flex w-min flex-row items-center  gap-4 pr-1  text-2xl">
-          
           <div className="small-screen-menu md:hidden">
-          { !smsidemenu && 
-            <button
-              className="flex transition-all"
-              onClick={() => setSmsidemenu((prev) => !prev)}
-            >
-              <BiMenu style={{ fontSize: "1.7rem" }} />
-            </button>
-          }
+            {!smsidemenu && (
+              <button
+                className="flex transition-all"
+                onClick={() => setSmsidemenu((prev) => !prev)}
+              >
+                <BiMenu style={{ fontSize: "1.7rem" }} />
+              </button>
+            )}
           </div>
-          <h1 >KEYPINI</h1>
+          <h1>KEYPINI</h1>
         </div>
         <div className="links flex h-full list-none items-center">
           {navlinks.map((link, index) => (
@@ -39,14 +38,18 @@ const Headerbottom = ({smsidemenu,setSmsidemenu}) => {
           ))}
         </div>
         <div className="mr-5  flex w-min gap-5">
-          <BsCart
-            style={{ fontSize: "1.2rem" }}
-            className="cursor-pointer transition-all hover:scale-105"
-          />
+          <a href='/cart'>
+            <BsCart
+              style={{ fontSize: "1.2rem" }}
+              className="cursor-pointer transition-all hover:scale-105"
+            />
+          </a>
+          <a href="/account">
           <AiOutlineUser
             style={{ fontSize: "1.3rem" }}
             className="cursor-pointer transition-all hover:scale-105"
           />
+          </a>
         </div>
       </div>
 

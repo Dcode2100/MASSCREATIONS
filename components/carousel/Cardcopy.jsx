@@ -5,8 +5,8 @@ import Buttonone from "../commoncomp/Buttonone";
 const Cardcopy = ({ carddata }) => {
   return (
     // MAKE A CARD IN WHICH THERE IS 70 COVERED WITH PHOTO AND LATER HALF WITH NAME DESCRIPTION AND ADD TO TO CART BUTTON AT BOTTOM
-    <div className="relative h-[calc(100vh_-_15rem)] bg-blue-200 p-6 pr-2">
-      <div className="relative h-full w-full ">
+    <div className="relative h-[calc(100vh_-_15rem)] w-[100%]  p-5">
+      <div className="h-full  relative  ">
         <Image
           className="absolute h-full w-full object-cover "
           src={carddata.photo}
@@ -23,15 +23,14 @@ const Cardcopy = ({ carddata }) => {
             {carddata.name}
           </h1>
           <p
-            className="text-justify text-[1rem] font-light leading-[1rem]
-           tracking-[-0.6px] text-gray-300 opacity-80  "
+            className="pb-5 text-justify text-[1rem] font-light
+           leading-[1rem] tracking-[-0.6px] text-gray-300 opacity-80  "
           >
             {carddata.description}
           </p>
         </div>
+        <Buttonone title={"SHOP NOW"} />
       </div>
-
-      <Buttonone title={"SHOP NOW"} />
     </div>
   );
 };

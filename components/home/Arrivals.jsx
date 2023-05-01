@@ -1,6 +1,5 @@
 import React from 'react'
 import { GiMoebiusStar } from "react-icons/gi";
-import "../../src/styles/arrivals.css";
 // always destructure when importing from reacticons
 
 

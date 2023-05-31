@@ -49,3 +49,18 @@
   }, []);
 
 5. Error occured in the Card component everything was normal tried to reconfig next.config file but even after decleraing hot reload false didn't worked got solved after copying content of the component to a fresh new component with different name then card.
+
+
+
+
+
+      {carddata.map((card) => (
+        <div className="card" key={card.id}>
+          <img src={card.photo} alt={card.alt} />
+          <div className="card-info">
+            <h2>{card.name}</h2>
+            <p>{card.description}</p>
+            <h3>{card.price}</h3>
+          </div>
+        </div>
+      ))}

@@ -7,7 +7,7 @@ export const navlinks = [
       {
         title: "KEYCHAINS",
         dubmenu: [
-          { title: "METAL KEYCHAINS", path: "/collections/metal" },
+          { title: "METAL KEYCHAINS", path: "/metal" },
           { title: "RUBBER KEYCHAINS", path: "/rubber" },
           { title: "3D KEYCHAINS", path: "/3dkeychain" },
           { title: "MOVIE CHARACTERS", path: "/moviecharacter" },

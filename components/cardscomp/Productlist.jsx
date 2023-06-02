@@ -2,15 +2,16 @@ import React from "react";
 import Productcard from "../cardscomp/Productcard";
 
 const Productlist = ({ data }) => {
-  console.log(data);
   return (
-    <div className=" w-[80%] m-auto relative flex my-12 flex-wrap">
-      {data.map((card) => (
-        <div key={card.id} className="flex-wrap w-1/4 ">
-          <Productcard carddata={card} />
-        </div>
-      ))}
-    </div>
+    <React.Fragment>
+      <div className=" relative m-auto mb-8 flex w-[80%] flex-wrap">
+        {data.map((card) => (
+          <div key={card.id} className="w-1/4 flex-wrap ">
+            <Productcard carddata={card} />
+          </div>
+        ))}
+      </div>
+    </React.Fragment>
   );
 };
 

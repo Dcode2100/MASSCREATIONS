@@ -19,7 +19,7 @@ import Rating from "@mui/material/Rating";
 import { Box, Button } from "@mui/material";
 
 const Productcard = (carddata) => {
-  const { id, photo, alt, name, description, price, value } = carddata.carddata;
+  const { id, Images, alt, name, rating, description, price, value } = carddata.carddata;
   return (
     <Card className="relative border-2 border-blue-700 object-contain px-6 py-6">
       <div className="mb-3 flex justify-between">
@@ -27,15 +27,15 @@ const Productcard = (carddata) => {
         <Rating
           name="read-only"
           style={{ fontSize: "15px" }}
-          value={value}
+          value={rating}
           readOnly
         />
       </div>
       <CardMedia
         component="img"
-        image={photo}
+        image={Images}
         alt={alt}
-        className="m-auto h-[11rem] w-[100%] "
+        className="m-auto h-[11rem] w-[100%] object-center object-contain "
       />
       <div className="mb-1 mt-3 w-full">
         <Typography variant="h6" className="relative  w-full pl-1">

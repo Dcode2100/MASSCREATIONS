@@ -6,11 +6,15 @@ import { AiOutlineUser } from "react-icons/ai";
 import Dropdown from "./Dropdown";
 import Menutoggle from "./Menutoggle";
 import Sidenav from "./Sidenav";
-
-const Headerbottom = ({smsidemenu,setSmsidemenu}) => {
+import Carthover from "./Carthover";
+const Headerbottom = ({
+  smsidemenu,
+  setSmsidemenu,
+  setCartactive,
+  cartactive,
+}) => {
   const [drop, setDrop] = React.useState(null);
-
-
+  
   return (
     <div>
       <div className="Header relative  flex h-[3.5rem] items-center justify-between bg-green-300  ">
@@ -38,17 +42,18 @@ const Headerbottom = ({smsidemenu,setSmsidemenu}) => {
           ))}
         </div>
         <div className="mr-5  flex w-min gap-5">
-          <a href='/cart'>
+          <a href="/cart">
             <BsCart
               style={{ fontSize: "1.2rem" }}
               className="cursor-pointer transition-all hover:scale-105"
             />
           </a>
+          {cartactive  && (<div>asfgfd</div>)}
           <a href="/account">
-          <AiOutlineUser
-            style={{ fontSize: "1.3rem" }}
-            className="cursor-pointer transition-all hover:scale-105"
-          />
+            <AiOutlineUser
+              style={{ fontSize: "1.3rem" }}
+              className="cursor-pointer transition-all hover:scale-105"
+            />
           </a>
         </div>
       </div>

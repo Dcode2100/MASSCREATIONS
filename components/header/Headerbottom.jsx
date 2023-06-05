@@ -7,13 +7,24 @@ import Dropdown from "./Dropdown";
 import Menutoggle from "./Menutoggle";
 import Sidenav from "./Sidenav";
 import Carthover from "./Carthover";
+import { useDispatch } from "react-redux";
+import { openCart, closeCart, addToCart } from "../../features/cart/cartSlice";
+
 const Headerbottom = ({
   smsidemenu,
   setSmsidemenu,
   setCartactive,
   cartactive,
 }) => {
-  const [drop, setDrop] = React.useState(null);
+
+  const dispatch = useDispatch();
+
+  const handleMouseClick = () => {
+    dispatch(openCart());
+  };
+
+
+  const [drop, setDrop] = useState(null);
   
   return (
     <div>
@@ -42,13 +53,13 @@ const Headerbottom = ({
           ))}
         </div>
         <div className="mr-5  flex w-min gap-5">
-          <a href="/cart">
+          <div className="Cart-button" onClick={handleMouseClick}>
             <BsCart
               style={{ fontSize: "1.2rem" }}
               className="cursor-pointer transition-all hover:scale-105"
             />
-          </a>
-          {cartactive  && (<div>asfgfd</div>)}
+            
+          </div>
           <a href="/account">
             <AiOutlineUser
               style={{ fontSize: "1.3rem" }}

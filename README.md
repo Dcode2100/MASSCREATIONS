@@ -64,3 +64,6 @@
           </div>
         </div>
       ))}
+
+
+6. After some reseach on redux toolkit and react context Api the final decision is to use redux toolkit since there is multiple UI toggling and the same state and data is being passed to different component of cart, and to maintain the logic and data of Unique user and their cart values redux will be better option. 

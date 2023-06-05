@@ -16,3 +16,12 @@
     justify-content: center;
     align-items: center;
 }
+
+.cart-wrapper {
+  transition: all 0.3s ease-in-out;
+    transform: translateX(100%);
+}
+
+.open {
+  transform: translateX(0);
+}

@@ -11,15 +11,17 @@ import { Provider } from "react-redux";
 import store from "../../store";
 
 export default function App({ Component, pageProps }) {
-  const [cartactive, setCartactive] = useState(true);
-
+ 
   return (
-    <Provider store={store}>
-      <div className="relative">
-        <Header cartactive={cartactive} setCartactive={setCartactive} />
-        <Component {...pageProps} />
-        <Footer />
-      </div>
-    </Provider>
+    <div className="box-border overflow-hidden">
+      <Provider store={store}>
+        
+        <div className="relative">
+          <Header />
+          <Component {...pageProps} />
+          <Footer />
+        </div>
+      </Provider>
+    </div>
   );
 }

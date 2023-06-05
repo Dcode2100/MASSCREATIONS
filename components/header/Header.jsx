@@ -5,10 +5,11 @@ import Headertop from "./Headertop";
 import Headercenter from "./Headercenter";
 import Dropdown from "./Dropdown";
 import Sidenav from "./Sidenav";
-
-const Header = (setCartactive, cartactive) => {
+import { useSelector } from "react-redux";
+      import Cart from "../cart/Cart";
+const Header = () => {
   const [smsidemenu, setSmsidemenu] = useState(false);
-
+ const isOpen = useSelector((state) => state.cart.isOpen);
   return (
     <React.Fragment>
       <Headertop />
@@ -16,12 +17,14 @@ const Header = (setCartactive, cartactive) => {
         <Headercenter />
       </div>
       {smsidemenu && <Sidenav setSmsidemenu={setSmsidemenu} />}
-      <Headerbottom
-        smsidemenu={smsidemenu}
-        setSmsidemenu={setSmsidemenu}
-        setCartactive={setCartactive}
-        cartactive={cartactive}
-      />
+      <Headerbottom smsidemenu={smsidemenu} setSmsidemenu={setSmsidemenu} />
+      <div
+        className={`cart-wrapper absolute right-0 top-0 z-10 ${
+          isOpen ? "open" : ""
+        }`}
+      >
+        <Cart />
+      </div>
     </React.Fragment>
   );
 };

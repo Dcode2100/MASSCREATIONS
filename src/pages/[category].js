@@ -7,19 +7,16 @@ const DynamicCategory = ({ product, error }) => {
   const [cartactive, setCartactive] = useState(true);
   const router = useRouter();
   const { category } = router.query; // Access the value of the 'category' parameter
-    console.log(product);
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
 
   if (!product) {
     return <div>Loading...</div>;
   }
 
-
   return (
     <div>
-      <h1 className="  text-3xl mt-6 mb-6 flex justify-center items-center">{category} Keychain Category</h1>
+      <h1 className="  mb-6 mt-6 flex items-center justify-center text-3xl">
+        {category} Keychain Category
+      </h1>
       <Productlist data={product} />
     </div>
   );

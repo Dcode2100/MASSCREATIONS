@@ -6,6 +6,7 @@ import { RxCross2 } from "react-icons/rx";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { closeCart } from "../../features/cart/cartSlice";
+import EmptyCart from "./EmptyCart";
 import Cartproduct from "./Cartproduct";
 const Cart = () => {
   const dispatch = useDispatch();
@@ -15,23 +16,23 @@ const Cart = () => {
   };
 
   return (
-    <div className={`right-0 top-0 h-[100vh] w-[27rem] bg-blue-600 `}>
-      <Box
-        sx={{ width: "100%" }}
-        className="flex justify-between bg-yellow-300 py-3 "
-      >
+    <div
+      className={`relative right-0 top-0 h-[100vh] w-[27rem] overflow-y-auto bg-white`}
+    >
+      <Box sx={{ width: "100%" }} className="flex justify-between  py-3 ">
         <h2 className="pl-4 text-2xl">CART</h2>
         <RxCross2
           className="mr-3 cursor-pointer text-3xl"
           onClick={handleCloseCart}
         />
       </Box>
-      <Box className="p-3 pt-5">
-        {products.map((product) => (
-          <div key={product.id}>
-            <Cartproduct product={product} />
-          </div>
-        ))}
+      <div className="h-[0.5px] bg-slate-500"></div>
+      <Box className=" pt-5">
+        {products.length === 0 ? (
+          <EmptyCart />
+        ) : (
+          <Cartproduct product={products} />
+        )}
       </Box>
     </div>
   );

@@ -6,14 +6,15 @@ import Headercenter from "./Headercenter";
 import Dropdown from "./Dropdown";
 import Sidenav from "./Sidenav";
 import { useSelector } from "react-redux";
-      import Cart from "../cart/Cart";
+import Cart from "../cart/Cart";
 const Header = () => {
   const [smsidemenu, setSmsidemenu] = useState(false);
- const isOpen = useSelector((state) => state.cart.isOpen);
+  const isOpen = useSelector((state) => state.cart.isOpen);
+
   return (
-    <React.Fragment>
+    <div className="header-child-wrapper relative ">
       <Headertop />
-      <div className="max-xs:hidden">
+      <div className="bg-white max-xs:hidden">
         <Headercenter />
       </div>
       {smsidemenu && <Sidenav setSmsidemenu={setSmsidemenu} />}
@@ -23,9 +24,10 @@ const Header = () => {
           isOpen ? "open" : ""
         }`}
       >
+        {" "}
         <Cart />
       </div>
-    </React.Fragment>
+    </div>
   );
 };
 export default Header;

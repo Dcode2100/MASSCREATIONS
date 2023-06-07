@@ -11,14 +11,17 @@ import { Provider } from "react-redux";
 import store from "../../store";
 
 export default function App({ Component, pageProps }) {
- 
   return (
     <div className="box-border overflow-hidden">
       <Provider store={store}>
-        
         <div className="relative">
-          <Header />
-          <Component {...pageProps} />
+          <div className="fixed top-0 w-full z-10">
+            <Header />
+          </div>
+          <div className="mt-36">
+            <Component {...pageProps} />
+          </div>
+
           <Footer />
         </div>
       </Provider>

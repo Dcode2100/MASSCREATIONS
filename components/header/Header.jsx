@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Percentoff from "./Percentoff";
 import Headerbottom from "./Headerbottom";
 import Headertop from "./Headertop";
@@ -10,9 +10,25 @@ import Cart from "../cart/Cart";
 const Header = () => {
   const [smsidemenu, setSmsidemenu] = useState(false);
   const isOpen = useSelector((state) => state.cart.isOpen);
+  const [isHeaderTopVisible, setIsHeaderTopVisible] = useState(true);
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+      setIsHeaderTopVisible(scrollTop <= 0);
+    };
+    // the window is given the scroll event listener and if there is scroll then execute the handleScroll function,
 
+    window.addEventListener("scroll", handleScroll);
+    // return the window with the scroll event listener
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
-    <div className="header-child-wrapper relative ">
+    <div
+      className={`header-child-wrapper relative transition-all duration-300 ${
+        isHeaderTopVisible ? "headertop-visible" : "headertop-hidden"
+      }`}
+    >
       <Headertop />
       <div className="bg-white max-xs:hidden">
         <Headercenter />

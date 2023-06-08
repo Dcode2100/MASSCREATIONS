@@ -27,8 +27,9 @@
 }
 
 .headertop-visible {
-  height: 3rem;
+  transform: translate(0);
 }
-/* .headertop-hidden {
-  height: 0;
-} */
+.headertop-hidden {
+  transform: translatey(-4.5rem);
+}
+

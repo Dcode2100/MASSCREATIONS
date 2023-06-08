@@ -2,40 +2,40 @@ import React from "react";
 import { Box } from "@mui/material";
 import Image from "next/image";
 import CardMedia from "@mui/material/CardMedia";
-
-export const Cartcards = ({ product }) => {
+import Cartheadermsg from "./Cartheadermsg";
+const Cartcards = ({ product }) => {
+  // Function to handle the card click
+  const handleCardClick = () => {
+    // Implement the desired functionality here
+    console.log("Card clicked:", product.id);
+  };
+console.log(product);
   return (
-    <Box className="flex items-center justify-between border-2 border-gray-600 px-4 py-3">
-      <div className="flex items-center">
-        <Image src={product.images}/>
+    <Box className="flex ">
+      <div className="relative h-12 w-4">
+       <h1>{product.title}</h1>
       </div>
-      <div className="border-2 border-blue-600">{product.title}</div>
-    </Box>
-  );
-};
-
-export const subtotal = () => {
-  return (
-    <Box className="flex items-center justify-between px-4 py-3">
-      <h2 className="text-[0.8rem]">Subtotal (0 items):</h2>
-      <h2 className="text-[0.8rem]">$0.00</h2>
+      
     </Box>
   );
 };
 
 const Cartproduct = ({ product }) => {
-  console.log(product);
+  
   return (
-    <div className="border">
-      <subtotal />
-      <div>
+    <React.Fragment>
+      <div className="mb-8">
+        <Cartheadermsg />
+      </div>
+
+      <div className="m-auto w-[90%] bg-blue-500">
         {product.map((product) => (
           <div key={product.id}>
             <Cartcards product={product} />
           </div>
         ))}
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 

@@ -36,14 +36,14 @@ const Header = () => {
       {smsidemenu && <Sidenav setSmsidemenu={setSmsidemenu} />}
       <Headerbottom smsidemenu={smsidemenu} setSmsidemenu={setSmsidemenu} />
       <div
-        className={`cart-wrapper absolute right-0 top-0 z-10 ${
+        className={`cart-wrapper absolute right-0 top-0 z-1 ${
           isOpen ? "open" : ""
         }`}
       >
         {" "}
-        <Cart />
+          <Cart />
+        </div>
       </div>
-    </div>
   );
 };
 export default Header;

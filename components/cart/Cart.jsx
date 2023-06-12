@@ -14,10 +14,10 @@ const Cart = () => {
   const handleCloseCart = () => {
     dispatch(closeCart());
   };
-
+  const isOpen = useSelector((state) => state.cart.isOpen );
   return (
     <div
-      className={`relative right-0 top-0 h-[100vh] w-[27rem] overflow-y-auto bg-slate-100 z-10`}
+      className={`relative h-[100vh] w-[27rem] overflow-y-auto bg-slate-100 transition-shadow duration-500 z-1 ${isOpen ? "shadow-2xl" : ""} `}
     >
       <Box sx={{ width: "100%" }} className="flex justify-between  py-3 ">
         <h2 className="pl-4 text-2xl">CART</h2>

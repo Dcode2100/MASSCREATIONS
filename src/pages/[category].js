@@ -2,22 +2,35 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Productlist from "../../components/cardscomp/Productlist";
 import { supabase } from "../../lib/supabaseClient";
-
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { closeCart } from "../../features/cart/cartSlice";
 const DynamicCategory = ({ product, error }) => {
-  const [cartactive, setCartactive] = useState(true);
   const router = useRouter();
+  const dispatch = useDispatch();
   const { category } = router.query; // Access the value of the 'category' parameter
-
+  const isOpen = useSelector((state) => state.cart.isOpen);
+  const handleCloseCart = () => {
+    dispatch(closeCart());
+  }
   if (!product) {
     return <div>Loading...</div>;
   }
 
   return (
-    <div>
-      <h1 className="  mb-6 mt-6 flex items-center justify-center text-3xl">
+    <div className="relative">
+      <div
+        className={`cover transition-colors z-[-1] absolute h-[100%] w-[100%] opacity-30 duration-500 ${
+          isOpen ? " z-[1] bg-slate-700 " : ""
+        }`}
+        onClick={handleCloseCart}
+      ></div>
+      <h1 className="  flex items-center justify-center pb-4 pt-4 text-3xl uppercase">
         {category} Keychain Category
       </h1>
-      <Productlist data={product} />
+      <div className="pb-8">
+        <Productlist data={product} />
+      </div>
     </div>
   );
 };

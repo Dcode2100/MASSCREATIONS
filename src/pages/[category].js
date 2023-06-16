@@ -12,15 +12,14 @@ const DynamicCategory = ({ product, error }) => {
   const isOpen = useSelector((state) => state.cart.isOpen);
   const handleCloseCart = () => {
     dispatch(closeCart());
-  }
+  };
   if (!product) {
     return <div>Loading...</div>;
   }
-
   return (
     <div className="relative">
       <div
-        className={`cover transition-colors z-[-1] absolute h-[100%] w-[100%] opacity-30 duration-500 ${
+        className={`cover absolute z-[-1] h-[100%] w-[100%] opacity-30 transition-colors duration-500 ${
           isOpen ? " z-[1] bg-slate-700 " : ""
         }`}
         onClick={handleCloseCart}

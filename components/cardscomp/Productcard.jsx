@@ -5,17 +5,19 @@ import Typography from "@mui/material/Typography";
 import Rating from "@mui/material/Rating";
 import { Button } from "@mui/material";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../../features/cart/cartSlice";
+import { addToCart, total} from "../../features/cart/cartSlice";
 
 const Productcard = (carddata) => {
-  const { id,Images, alt, name, rating, price } =
+  const { id,Images, alt, title, rating, price } =
     carddata.carddata;
   const dispatch = useDispatch();
   const addProduct = (product) => {
     dispatch(addToCart(product));
+    dispatch(total());
   }
+  
   return (
-    <Card className="relative border-2 border-blue-700 object-contain px-6 py-6">
+    <Card className="relative border-2  object-contain px-6 py-6">
       <div className="mb-3 flex justify-between">
         <Typography variant="body2">LABEL</Typography>
         <Rating
@@ -33,7 +35,7 @@ const Productcard = (carddata) => {
       />
       <div className="mb-1 mt-3 w-full">
         <Typography variant="h6" className="relative  w-full pl-1">
-          {name}
+          {title}
         </Typography>
       </div>
       <div className="mb-3 flex ">

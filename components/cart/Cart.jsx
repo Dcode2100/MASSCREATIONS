@@ -9,12 +9,13 @@ import { closeCart } from "../../features/cart/cartSlice";
 import EmptyCart from "./EmptyCart";
 import Cartproduct from "./Cartproduct";
 const Cart = () => {
+  const products = useSelector((state) => state.cart.cartlist);
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.cart.products);
   const handleCloseCart = () => {
     dispatch(closeCart());
   };
   const isOpen = useSelector((state) => state.cart.isOpen );
+ 
   return (
     <div
       className={`relative h-[100vh] w-[27rem] overflow-y-auto bg-slate-100 transition-shadow duration-500 z-1 ${isOpen ? "shadow-2xl" : ""} `}
@@ -31,9 +32,10 @@ const Cart = () => {
         {products.length === 0 ? (
           <EmptyCart />
         ) : (
-          <Cartproduct product={products} />
+          <Cartproduct />
         )}
       </Box>
+
     </div>
   );
 };

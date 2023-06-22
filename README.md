@@ -67,3 +67,6 @@
 
 
 6. After some reseach on redux toolkit and react context Api the final decision is to use redux toolkit since there is multiple UI toggling and the same state and data is being passed to different component of cart, and to maintain the logic and data of Unique user and their cart values redux will be better option. 
+
+
+7. template to ask chatgpt - I am building ecommerce application using nextjs already set up with redux for cart, supabase for product categories so please guide me as a senior developer with correct answer and suggestions and let me know how many line of code have i sended to you with everyone response . issue -

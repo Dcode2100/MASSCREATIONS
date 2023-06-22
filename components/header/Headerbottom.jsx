@@ -52,12 +52,12 @@ const Headerbottom = ({
           ))}
         </div>
         <div className="mr-5  flex w-min gap-4 text-xl items-center">
-          <a href="/account/account" className="flex items-center gap-1">
+          <a href="/account/accountpage" className="flex items-center gap-1">
             <AiOutlineUser
               style={{ fontSize: "1.5rem" }}
               className="cursor-pointer transition-all hover:scale-105"
             />
-            <h2>Account</h2>
+            <h2>Account{`username`}</h2>
           </a>
           <div
             className="Cart-button flex items-center gap-1 cursor-pointer"

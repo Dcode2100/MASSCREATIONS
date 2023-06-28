@@ -1,12 +1,39 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import { FaUserAlt, FaUserMinus } from "react-icons/fa";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-import { AiOutlineUser } from "react-icons/ai";
+import { supabase } from "../../lib/supabaseClient";
 const Signup = () => {
+  const [input, setInput] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
+ function handleInput(e) {
+   const { name, value,phone } = e.target;
+   setInput((prevInput) => ({
+     ...prevInput,
+     [name]: value,
+   }));
+ }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const { email, password } = input;
+    const { user, error } = await supabase.auth.signUp({
+      email,
+      password,
+    });
+
+    if (error) {
+      console.error("Error signing up:", error.message);
+    } else {
+      console.log("User registered:", user);
+      // Redirect or perform any other actions
+    }
+  };
   return (
-    <div className="relative flex h-[calc(100vh_-_6.6rem)] gap-[10%] px-[5%] py-[2%] ">
-      <div className="signup-left relative h-full w-[40%] rounded-md bg-gray-200  px-[3%] pt-[2%] shadow-xl shadow-slate-500">
+    <div className="relative flex h-[calc(100vh_-_8rem)] items-center justify-center">
+      <div className="signup-left relative h-[90%] w-[30%] rounded-md bg-gray-200  px-[3%] pt-[2%] shadow-xl shadow-slate-500">
         <div className="signup-left-header m-auto flex  w-min justify-center gap-[15%] whitespace-nowrap px-[5%] pb-[3%] ">
           <button className="text-md flex w-min items-center justify-center gap-2 rounded-xl bg-transparent p-3 px-7 shadow-md transition-all duration-200 hover:scale-[1.05]">
             <FaUserAlt className=" text-green-500" /> <h2>Sign in</h2>
@@ -32,22 +59,33 @@ const Signup = () => {
           <input
             type="text"
             placeholder="Username"
+            name="username"
             className="active:borer-2 w-full rounded-xl p-3 px-5 shadow-md active:border-green-500"
+            value={input.username}
+            onChange={handleInput}
           />
           <input
             type="text"
             placeholder="Email"
+            name="email"
             className="w-full rounded-xl p-3 px-5 shadow-md"
+            value={input.email}
+            onChange={handleInput}
           />
           <input
-            type="text"
+            type="alpha-numeric"
+            name="password"
             placeholder="Password"
             className="w-full rounded-xl p-3 px-5 shadow-md"
+            value={input.password}
+            onChange={handleInput}
           />
           <input
             type="text"
             placeholder="Confirm Password"
             className="w-full rounded-xl p-3 px-5 shadow-md"
+            input={input.confirmpassword}
+            onChange={handleInput}
           />
         </div>
         <FormControlLabel
@@ -56,11 +94,10 @@ const Signup = () => {
           label="Accept Terms & Conditions"
           className="mt-4"
         />
-        <button className="text-md mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-green-500 p-3 px-7 shadow-md transition-all duration-200 hover:scale-[1.02]">
+        <button onClick={handleSubmit}  className="text-md mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-green-500 p-3 px-7 shadow-md transition-all duration-200 hover:scale-[1.02]">
           <FaUserAlt className=" text-green-500" /> <h2>Sign Up</h2>
         </button>
       </div>
-      <div className="login-right inset-0 m-auto h-full w-1/2">right</div>
     </div>
   );
 };

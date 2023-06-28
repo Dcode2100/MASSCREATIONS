@@ -9,4 +9,4 @@ const accountpage = () => {
   );
 };
 
-export default Authhoc();
+export default accountpage;

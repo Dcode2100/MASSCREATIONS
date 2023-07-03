@@ -1,10 +1,10 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Percentoff from "./Percentoff";
 import Headerbottom from "./Headerbottom";
 import Headertop from "./Headertop";
 import Headercenter from "./Headercenter";
 import Dropdown from "./Dropdown";
-import Sidenav from "./Sidenav";
+import Sidenav from "./Sidenav.jsx";
 import { useSelector } from "react-redux";
 import Cart from "../cart/Cart";
 const Header = () => {
@@ -30,20 +30,24 @@ const Header = () => {
       }`}
     >
       <Headertop />
+
+
       <div className="bg-white max-xs:hidden">
         <Headercenter />
       </div>
-      {smsidemenu && <Sidenav setSmsidemenu={setSmsidemenu} />}
+
+      <Sidenav setSmsidemenu={setSmsidemenu} smsidemenu={smsidemenu} />
+
       <Headerbottom smsidemenu={smsidemenu} setSmsidemenu={setSmsidemenu} />
       <div
-        className={`cart-wrapper absolute right-0 top-0 z-1 ${
+        className={`cart-wrapper z-1 absolute right-0 top-0 ${
           isOpen ? "open" : ""
         }`}
       >
         {" "}
-          <Cart />
-        </div>
+        <Cart />
       </div>
+    </div>
   );
 };
 export default Header;

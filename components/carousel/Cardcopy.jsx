@@ -24,7 +24,7 @@ const Cardcopy = ({ carddata }) => {
           </h1>
           <p
             className="pb-5 text-justify text-[1rem] font-light
-           leading-[1rem] tracking-[-0.6px] text-gray-300 opacity-80  "
+           leading-[1rem] tracking-[-0.6px] text-gray-300 opacity-80 "
           >
             {carddata.description}
           </p>

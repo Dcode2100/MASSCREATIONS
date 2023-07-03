@@ -6,7 +6,7 @@ export const navlinks = [
     submenu: [
       {
         title: "KEYCHAINS",
-        dubmenu: [
+        submenu: [
           { title: "METAL KEYCHAINS", path: "/metal" },
           { title: "RUBBER KEYCHAINS", path: "/rubber" },
           { title: "3D KEYCHAINS", path: "/3dkeychain" },
@@ -19,7 +19,7 @@ export const navlinks = [
 
       {
         title: "SPECIAL BEST SELLER",
-        dubmenu: [
+        submenu: [
           { title: "MARVAL", path: "/marvel" },
           { title: "DISNIY", path: "/disniy" },
           { title: "CARTOONS", path: "/cartoons" },
@@ -28,7 +28,7 @@ export const navlinks = [
 
       {
         title: "GIFT HAMPERS",
-        dubmenu: [
+        submenu: [
           { title: "MARVAL FANHOUSE", path: "/marvalfanhouse " },
           { title: "DIsNIY FANHOUSE", path: "/diniyfanhouse " },
         ],

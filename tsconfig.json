@@ -18,6 +18,16 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/footer/Footer.jsx", "src/pages/index.jsx", "src/pages/_app.jsx", "src/pages/_document.jsx", "components/home/Herosection.jsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "components/footer/Footer.jsx",
+    "src/pages/index.jsx",
+    "src/pages/_app.jsx",
+    "src/pages/_document.jsx",
+    "components/home/Herosection.jsx",
+    "components/header/Sidenav.jsx"
+  ],
   "exclude": ["node_modules"]
 }

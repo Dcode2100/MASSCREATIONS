@@ -3,7 +3,7 @@ import React from "react";
 const Menutoggle = ({ items, index, setDrop }) => {
   return (
     <div
-      className="relative h-full w-full  whitespace-nowrap px-8 max-md:hidden
+      className="menutoggle-a relative mx-8 h-full bg-green-500 max-md:hidden
       "
       onMouseEnter={() => {
         items.submenu && setDrop(index);
@@ -14,7 +14,7 @@ const Menutoggle = ({ items, index, setDrop }) => {
     >
       <a
         key={index}
-        className="h-full w-full flex items-center justify-center text-md text-black"
+        className=" text-md flex h-full items-center justify-center text-black"
         href={items.path}
       >
         {items.title}

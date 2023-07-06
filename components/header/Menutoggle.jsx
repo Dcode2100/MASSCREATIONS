@@ -3,7 +3,7 @@ import React from "react";
 const Menutoggle = ({ items, index, setDrop }) => {
   return (
     <div
-      className="menutoggle-a relative mx-8 h-full bg-green-500 max-md:hidden
+      className="menutoggle-a relative mx-8 h-full  max-md:hidden
       "
       onMouseEnter={() => {
         items.submenu && setDrop(index);

@@ -23,7 +23,7 @@ const Headerbottom = ({ smsidemenu, setSmsidemenu }) => {
     <div>
       <div className="Header relative  flex h-[3.5rem] items-center justify-between bg-green-300 ">
         <div className="ml-5 flex w-min flex-row items-center  gap-4 pr-1  text-2xl">
-          <div className="small-screen-menu b  md:hidden ">
+          <div className="small-screen-menu   md:hidden ">
             {
               <button
                 className="flex transition-all"
@@ -46,7 +46,7 @@ const Headerbottom = ({ smsidemenu, setSmsidemenu }) => {
           ))}
         </div>
         <div className="mr-5  flex w-min items-center gap-4 text-xl">
-          <a href="/account/accountpage" className="flex items-center gap-1">
+          <a href="/signuppage" className="flex items-center gap-1">
             <AiOutlineUser
               style={{ fontSize: "1.5rem" }}
               className="cursor-pointer transition-all hover:scale-105"

@@ -41,7 +41,7 @@ export const navlinks = [
     submenu: [
       {
         title: "GIFT HAMPERS",
-        dubmenu: [
+        submenu: [
           { title: "MARVAL FANHOUSE", path: "/marvalfanhouse " },
           { title: "DIsNIY FANHOUSE", path: "/diniyfanhouse " },
         ],
@@ -54,7 +54,7 @@ export const navlinks = [
     submenu: [
       {
         title: "ORDERS",
-        dubmenu: [
+        submenu: [
           { title: "ORDER STATUS", path: "/orderstatus" },
           { title: "TRACK ORDER", path: "/trackorder" },
           { title: "RETURN POLICY", path: "/returnpolicy" },
@@ -63,14 +63,14 @@ export const navlinks = [
       },
       {
         title: "PAYMENT",
-        dubmenu: [
+        submenu: [
           { title: "PAYMENT RECEIPT", path: "/paymentrecipt" },
           { title: "PAYMENT METHODS", path: "/paymentmethods" },
         ],
       },
       {
         title: "CONTACT US",
-        dubmenu: [
+        submenu: [
           { title: "PHONE - 7678096369" },
           { title: "EMAIL - dcode2100@gmail.com" },
         ],

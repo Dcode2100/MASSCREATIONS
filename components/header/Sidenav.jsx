@@ -1,16 +1,21 @@
 import React, { useState } from "react";
 import { RxCross1 } from "react-icons/rx";
 import { navlinks } from "../common";
+import { useRef } from "react";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 
 const Sidenav = ({ setSmsidemenu, smsidemenu }) => {
   const [openLinks, setOpenLinks] = useState([]);
+  const [maxHeight, setMaxHeight] = useState(0);
+   const contentRef = useRef(null);
 
   const toggleLink = (link) => {
     if (openLinks.includes(link)) {
       setOpenLinks(openLinks.filter((l) => l !== link));
+      setMaxHeight(0);
     } else {
       setOpenLinks([...openLinks, link]);
+      setMaxHeight(contentRef.current.scrollHeight);
     }
   };
 
@@ -50,8 +55,9 @@ const Sidenav = ({ setSmsidemenu, smsidemenu }) => {
               return (
                 <div key={index1} className="">
                   <div
-                    className="flex justify-between p-2"
-                    onClick={() => toggleLink(link1.title)}
+                    ref={contentRef}
+                    className="sidenav__body ml-3 mt-8 text-[1rem] transition-all duration-500"
+                    style={{ maxHeight: `${maxHeight}px` }}
                   >
                     <h1
                       className=" cursor-pointer "
@@ -80,7 +86,7 @@ const Sidenav = ({ setSmsidemenu, smsidemenu }) => {
                           className="  cursor-pointer transition-all duration-500"
                           onClick={() => toggleLink(link2.title)}
                         >
-                          <div className="flex justify-between p-2 bg-green-200">
+                          <div className="flex justify-between bg-green-200 p-2">
                             <h2
                               className="cursor-pointer"
                               onClick={() => toggleLink(link2.title)}
@@ -97,7 +103,7 @@ const Sidenav = ({ setSmsidemenu, smsidemenu }) => {
                               </div>
                             )}
                           </div>
-                          <div className="bg-blue-200 w-[100%]">
+                          <div className="w-[100%] bg-blue-200">
                             {isChildOpen &&
                               link2.submenu &&
                               link2.submenu.map((link3, index3) => {
@@ -106,7 +112,7 @@ const Sidenav = ({ setSmsidemenu, smsidemenu }) => {
                                     key={index3}
                                     href={link3.path}
                                     onClick={() => toggleLink(link3.title)}
-                                    className="my-3 ml-4 p-2 flex w-min cursor-pointer whitespace-nowrap transition-all duration-500"
+                                    className="my-3 ml-4 flex w-min cursor-pointer whitespace-nowrap p-2 transition-all duration-500"
                                   >
                                     {link3.title}
                                   </a>

@@ -11,8 +11,8 @@ const Dropdown = ({ items }) => {
               className="categories-link w-min whitespace-nowrap  px-6 "
             >
               <h3 className="mb-4 text-[1.3rem] text-black">{sub.title}</h3>
-              {sub.dubmenu &&
-                sub.dubmenu.map((dub, index) => {
+              {sub.submenu &&
+                sub.submenu.map((dub, index) => {
                   return (
                     <div key={index} className="">
                       <a

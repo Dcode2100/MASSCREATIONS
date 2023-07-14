@@ -5,7 +5,7 @@ import Buttonone from "../commoncomp/Buttonone";
 const Cardcopy = ({ carddata }) => {
   return (
     // MAKE A CARD IN WHICH THERE IS 70 COVERED WITH PHOTO AND LATER HALF WITH NAME DESCRIPTION AND ADD TO TO CART BUTTON AT BOTTOM
-    <div className="relative h-[calc(100vh_-_15rem)] w-[100%]  p-5">
+    <div className="relative h-[calc(100vh_-_8rem)] w-[100%]  p-5">
       <div className="h-full  relative  ">
         <Image
           className="absolute h-full w-full object-cover "

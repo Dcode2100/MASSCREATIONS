@@ -1,121 +1,112 @@
-import React from "react";
-import Cardcontainer from "../carousel/Cardcontainer";
+import React, { useRef, useState } from "react";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-fade";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+// import required modules
+import { EffectFade, Navigation, Pagination } from "swiper/modules";
 
-export const carddata = [
-  // add data like name photo description
-  {
-    id: 1,
-    name: "elephant",
-    photo: "/Sample/samp1.jpg",
-
-    description:
-      " a statement that tells you how something or someone looks, sounds, etc. : words that describe something or someone. [count] Reporters called the scene “a disaster area,” and I think that was an accurate description.",
-    alt: "elephant",
-  },
-  {
-    id: 2,
-    name: "deer",
-    photo: "/Sample/samp2.jpg",
-
-    description:
-      " a statement that tells you how something or someone looks, sounds, etc. : words that describe something or someone. [count] Reporters called the scene “a disaster area,” and I think that was an accurate description.",
-    alt: "deer",
-  },
-  {
-    id: 3,
-    name: "horse",
-    photo: "/Sample/samp3.jpg",
-
-    description:
-      " a statement that tells you how something or someone looks, sounds, etc. : words that describe something or someone. [count] Reporters called the scene “a disaster area,” and I think that was an accurate description.",
-    alt: "horse",
-  },
-  {
-    id: 4,
-    name: "dog",
-    photo: "/Sample/samp4.jpg",
-    description:
-      " a statement that tells you how something or someone looks, sounds, etc. : words that describe something or someone. [count] Reporters called the scene “a disaster area,” and I think that was an accurate description.",
-    alt: "dog",
-  },
-  // add more of this objects below
-  {
-    id: 5,
-    name: "elephant",
-    photo: "/Sample/samp5.jpg",
-    description:
-      " a statement that tells you how something or someone looks, sounds, etc. : words that describe something or someone. [count] Reporters called the scene “a disaster area,” and I think that was an accurate description.",
-    alt: "elephant",
-  },
-  {
-    id: 6,
-    name: "deer",
-    photo: "/Sample/samp7.jpg",
-    description:
-      " a statement that tells you how something or someone looks, sounds, etc. : words that describe something or someone. [count] Reporters called the scene “a disaster area,” and I think that was an accurate description.",
-    alt: "deer",
-  },
-  {
-    id: 7,
-    name: "horse",
-    photo: "/Sample/samp8.jpg",
-    description:
-      " a statement that tells you how something or someone looks, sounds, etc. : words that describe something or someone. [count] Reporters called the scene “a disaster area,” and I think that was an accurate description.",
-    alt: "horse",
-  },
-  {
-    id: 8,
-    name: "dog",
-    photo: "/Sample/samp9.jpg",
-    description:
-      " a statement that tells you how something or someone looks, sounds, etc. : words that describe something or someone. [count] Reporters called the scene “a disaster area,” and I think that was an accurate description.",
-    alt: "dog",
-  },
-];
-
-const SamplePrevArrow = (props) => {
-  const { className, style, onClick } = props;
+const HeroSection = () => {
   return (
-    <div
-      className={` hero-prev-arrow absolute top-1/2  transform  ${className} fontsize-[2rem]`}
-      style={{ display: "block", background: "green" }}
-      onClick={onClick}
-    />
+    // Your JSX (converted HTML) code here
+    <React.Fragment>
+      <Swiper
+        spaceBetween={30}
+        effect={"fade"}
+        loop={true}
+        navigation={true}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[EffectFade, Navigation, Pagination]}
+        className="myswiper swiper-wrapper "
+      >
+        <SwiperSlide className="main swiper-slide" id="glacier">
+          <div className="left-side">
+            <div className="main-wrapper">
+              <h3 className="main-header">Closca Bottle</h3>
+              <h1 className="main-title">Glacier</h1>
+              <h2 className="main-subtitle">€ 39.90</h2>
+            </div>
+            <div className="main-content">
+              <div className="main-content__title">
+                Glaciers contain 75% of the World's freshwater
+              </div>
+              <div className="main-content__subtitle">
+                The effects of melting ice glaciers are biodiversity loss, the
+                rising of the sea level and the deficiency of freshwater, among
+                others.
+              </div>
+              <div className="more-menu">
+                Shop Now
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.7"
+                  stroke="currentColor"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <line x1="-5" y1="12" x2="19" y2="12" />
+                  <line x1="15" y1="16" x2="19" y2="12" />
+                  <line x1="15" y1="8" x2="19" y2="12" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div className="center">
+            <img className="bottle-img transp " src="MC_27/MC-1.png" />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className="main swiper-slide" id="coral">
+          <div className="left-side">
+            <div className="main-wrapper">
+              <h3 className="main-header">Closca Bottle</h3>
+              <h1 className="main-title">Coral</h1>
+              <h2 className="main-subtitle">€ 39.90</h2>
+            </div>
+            <div className="main-content">
+              <div className="main-content__title">
+                We will have lost 60% of our coral reefs by 2030.
+              </div>
+              <div className="main-content__subtitle">
+                Coral reefs are essential to humans, as they protect the
+                shorelines and are a source of nutrients and habitat for
+                thousands of marine species.
+              </div>
+              <div className="more-menu">
+                Shop Now
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.7"
+                  stroke="currentColor"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <line x1="-5" y1="12" x2="19" y2="12" />
+                  <line x1="15" y1="16" x2="19" y2="12" />
+                  <line x1="15" y1="8" x2="19" y2="12" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div className="center">
+            <img className="bottle-img" src="MC_27/MC-4.png" />
+          </div>
+        </SwiperSlide>
+      </Swiper>
+     
+      <div className="swiper-pagination"></div>
+    </React.Fragment>
   );
 };
 
-const SampleNextArrow = (props) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={`hero-next-arrow absolute top-1/2 transform  ${className} `}
-      style={{ ...style, display: "block", background: "red" }}
-      onClick={onClick}
-    />
-  );
-};
-
-const settings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  // arrows: true,
-  nextArrow: <SampleNextArrow />,
-  prevArrow: <SamplePrevArrow />,
-  responsive: [
-    { breakpoint: 1024, settings: { slidesToShow: 2, slidesToScroll: 1 } },
-    { breakpoint: 768, settings: { slidesToShow: 1, slidesToScroll: 1 } },
-  ],
-};
-
-const Herosection = () => {
-  return (
-    <div className="h-[calc(100vh_-_9rem)] ">
-      <Cardcontainer carddata={carddata} settings={settings} />
-    </div>
-  );
-};
-
-export default Herosection;
+export default HeroSection;

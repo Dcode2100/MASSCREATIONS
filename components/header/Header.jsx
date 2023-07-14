@@ -31,7 +31,6 @@ const Header = () => {
     >
       <Headertop />
 
-
       <div className="bg-white max-xs:hidden">
         <Headercenter />
       </div>
@@ -40,8 +39,8 @@ const Header = () => {
 
       <Headerbottom smsidemenu={smsidemenu} setSmsidemenu={setSmsidemenu} />
       <div
-        className={`cart-wrapper z-1 absolute right-0 top-0 ${
-          isOpen ? "open" : ""
+        className={`cart-wrapper z-1  absolute right-0 top-0 translate-x-[100%] transition-all duration-500 ${
+          isOpen ? "header-cart-open" : ""
         }`}
       >
         {" "}

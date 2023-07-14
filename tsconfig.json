@@ -26,7 +26,7 @@
     "src/pages/index.jsx",
     "src/pages/_app.jsx",
     "src/pages/_document.jsx",
-    "components/home/Herosection.jsx",
+    "components/home/HeroSection.jsx",
     "components/header/Sidenav.jsx"
   ],
   "exclude": ["node_modules"]

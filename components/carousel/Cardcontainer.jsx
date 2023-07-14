@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const Carousel = ({ carddata, settings }) => {
   return (
-    <Slider {...settings} className="w-[80%] m-auto">
+    <Slider {...settings} className="w-[100%] m-auto">
       <Cardcopy carddata={carddata[0]} />
       <Cardcopy carddata={carddata[1]} />
       <Cardcopy carddata={carddata[2]} />

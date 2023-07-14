@@ -70,3 +70,75 @@
 
 
 7. template to ask chatgpt - I am building ecommerce application using nextjs already set up with redux for cart, supabase for product categories so please guide me as a senior developer with correct answer and suggestions and let me know how many line of code have i sended to you with everyone response . issue -
+
+
+// export const carddata = [
+//   // add data like name photo description
+//   {
+//     id: 1,
+//     name: "elephant",
+//     photo: "/Sample/samp1.jpg",
+
+//     description:
+//       " a statement that tells you how something or someone looks, sounds, etc. : words that describe something or someone. [count] Reporters called the scene “a disaster area,” and I think that was an accurate description.",
+//     alt: "elephant",
+//   },
+//   {
+//     id: 2,
+//     name: "deer",
+//     photo: "/Sample/samp2.jpg",
+
+//     description:
+//       " a statement that tells you how something or someone looks, sounds, etc. : words that describe something or someone. [count] Reporters called the scene “a disaster area,” and I think that was an accurate description.",
+//     alt: "deer",
+//   },
+//   {
+//     id: 3,
+//     name: "horse",
+//     photo: "/Sample/samp3.jpg",
+
+//     description:
+//       " a statement that tells you how something or someone looks, sounds, etc. : words that describe something or someone. [count] Reporters called the scene “a disaster area,” and I think that was an accurate description.",
+//     alt: "horse",
+//   },
+//   {
+//     id: 4,
+//     name: "dog",
+//     photo: "/Sample/samp4.jpg",
+//     description:
+//       " a statement that tells you how something or someone looks, sounds, etc. : words that describe something or someone. [count] Reporters called the scene “a disaster area,” and I think that was an accurate description.",
+//     alt: "dog",
+//   },
+//   // add more of this objects below
+//   {
+//     id: 5,
+//     name: "elephant",
+//     photo: "/Sample/samp5.jpg",
+//     description:
+//       " a statement that tells you how something or someone looks, sounds, etc. : words that describe something or someone. [count] Reporters called the scene “a disaster area,” and I think that was an accurate description.",
+//     alt: "elephant",
+//   },
+//   {
+//     id: 6,
+//     name: "deer",
+//     photo: "/Sample/samp7.jpg",
+//     description:
+//       " a statement that tells you how something or someone looks, sounds, etc. : words that describe something or someone. [count] Reporters called the scene “a disaster area,” and I think that was an accurate description.",
+//     alt: "deer",
+//   },
+//   {
+//     id: 7,
+//     name: "horse",
+//     photo: "/Sample/samp8.jpg",
+//     description:
+//       " a statement that tells you how something or someone looks, sounds, etc. : words that describe something or someone. [count] Reporters called the scene “a disaster area,” and I think that was an accurate description.",
+//     alt: "horse",
+//   },
+//   {
+//     id: 8,
+//     name: "dog",
+//     photo: "/Sample/samp9.jpg",
+//     description:
+//       " a statement that tells you how something or someone looks, sounds, etc. : words that describe something or someone. [count] Reporters called the scene “a disaster area,” and I think that was an accurate description.",
+//     alt: "dog",
+//   },

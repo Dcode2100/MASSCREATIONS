@@ -1,8 +1,7 @@
 import "@/styles/globals.css";
-import "@/styles/second.css";
 import "@/styles/commoncomp.scss";
 import "@/styles/carousel.scss";
-import "@/styles/arrivals.css";
+
 import React, { useEffect } from "react";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";

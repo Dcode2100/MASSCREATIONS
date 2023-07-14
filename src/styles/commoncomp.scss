@@ -20,15 +20,8 @@
     transition: height 0.3s ease;
     z-index: 0;
 }
-
 .artistic-button:hover::after {
     height: 100%;
     top: 0;
 }
 
-
-
-.dropdown {
-   //  make this that whenever it arrives on the screen it arrives from opacity 0 to 100 
-    
-}

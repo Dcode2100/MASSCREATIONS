@@ -9,7 +9,7 @@ import "swiper/css/pagination";
 // import required modules
 import { EffectFade, Navigation, Pagination } from "swiper/modules";
 
-const HeroSection = () => {
+const Herosection = () => {
   return (
     // Your JSX (converted HTML) code here
     <React.Fragment>
@@ -109,4 +109,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default Herosection;

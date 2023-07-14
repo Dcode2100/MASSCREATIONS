@@ -1,11 +1,11 @@
-import HeroSection from "../../components/home/HeroSection";
+import Herosection from "../../components/home/Herosection";
 import Arrivals from "../../components/home/Arrivals";
 import React from "react";
 import { useRouter } from "next/router";
 function index() {
   return (
     <div className="index-wrapper">
-      <HeroSection />
+      <Herosection />
       <Arrivals />
     </div>
   );

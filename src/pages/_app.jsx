@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
 import "@/styles/commoncomp.scss";
 import "@/styles/carousel.scss";
-
+import "@/styles/loginsignup.scss";
 import React, { useEffect } from "react";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";

@@ -12,6 +12,18 @@
 	--italic-font: "EB Garamond", serif;
 	box-sizing: border-box;
 	overflow: visible !important;
+	--swiper-pagination-color: darkgreen;
+	--swiper-pagination-bullet-size: 10px;
+	--swiper-pagination-bullet-width: 20px;
+	--swiper-pagination-bullet-height: 2px;
+	--swiper-pagination-bullet-inactive-color: #000;
+	--swiper-pagination-bullet-active-color: #000;
+	
+	--swiper-pagination-bullet-inactive-opacity: 0.2;
+	--swiper-pagination-bullet-opacity: 1;
+	--swiper-pagination-bullet-horizontal-gap: 5px;
+	--swiper-pagination-bullet-vertical-gap: 6px;
+	--swiper-pagination-bullet-border-radius: 0px;
 }
 img {
 	max-width: 100%;
@@ -301,3 +313,13 @@ h3 {
 	opacity: 1;
 	transform: scale(1);
 }
+// .swiper-pagination {
+// 	@media screen and (max-width: 767px) {
+// 		display: none;
+// 	}
+// 	// making the dots designed as a line
+// }
+// .swiper-pagination-bullet-active{
+// 	background: var(--body-color);
+// 	opacity: 1;
+// }

@@ -57,7 +57,7 @@ h3 {
 	align-items: center;
 	gap: 3rem;
 	// justify-content: space-around;
-	border: 5px solid rgb(196, 20, 1);
+	// border: 5px solid rgb(196, 20, 1);
 	@media screen and (max-width: 767px) {
 		flex-direction: column;
 		gap: 0rem;
@@ -83,6 +83,9 @@ h3 {
 		margin-top: 10px;
 		line-height: 1em;
 		transition-delay: 0.3s;
+		@media screen and (max-width: 426px) {
+			font-size: 70px;
+		}
 	}
 
 	&-subtitle {

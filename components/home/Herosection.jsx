@@ -25,8 +25,8 @@ const Herosection = () => {
         className="myswiper swiper-wrapper "
       >
         <SwiperSlide className="main swiper-slide" id="glacier">
-          <div className="left-side">
-            <div className="main-wrapper">
+          <div className="left-side  ">
+            <div className="main-wrapper ">
               <h3 className="main-header">Closca Bottle</h3>
               <h1 className="main-title">Glacier</h1>
               <h2 className="main-subtitle">€ 39.90</h2>

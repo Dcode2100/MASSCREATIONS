@@ -9,8 +9,19 @@ import Sidenav from "./Sidenav.jsx";
 import Carthover from "./Carthover";
 import { useDispatch } from "react-redux";
 import { openCart, closeCart, addToCart } from "../../features/cart/cartSlice";
+import { supabase } from "../../lib/supabaseClient"
 
 const Headerbottom = ({ smsidemenu, setSmsidemenu }) => {
+  // const [username, setUsername] = useState("");
+  // useEffect(() => { 
+  //   function handleUserName() {
+  //     const user = supabase.auth.user();
+  //     setUsername(user);
+  //     console.log(user);
+  //   }
+  //   handleUserName();
+  // }, []);
+
   const dispatch = useDispatch();
 
   const handleMouseClick = () => {
@@ -51,7 +62,8 @@ const Headerbottom = ({ smsidemenu, setSmsidemenu }) => {
               style={{ fontSize: "1.5rem" }}
               className="cursor-pointer transition-all hover:scale-105"
             />
-            <h2>Account{`username`}</h2>
+            {/* <h2>{username? username : ""}</h2>*/}
+          
           </a>
           <div
             className="Cart-button flex cursor-pointer items-center gap-1"

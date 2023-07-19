@@ -10,7 +10,7 @@ const signuppage = () => {
   return (
     <div className="flex h-[100vh] w-[100vw] items-center justify-center">
       <div className="flex h-full w-full items-center justify-center bg-red-300">
-        <div className="login lg:my-15  relative shadow-lg lg:flex lg:h-[80%] lg:w-[70%] md:w-[70%] max-md:m-3 lg:max-w-[80rem] sm:w-[80%] lg:rounded-e-[2.5rem] lg:rounded-s-[2.5rem]">
+        <div className="login lg:my-15  relative shadow-lg max-md:m-3 sm:w-[80%] md:w-[70%] lg:flex lg:h-[80%] lg:w-[70%] lg:max-w-[80rem] lg:rounded-e-[2.5rem] lg:rounded-s-[2.5rem]">
           <div className="login__container relative flex flex-col  bg-white max-lg:rounded-[2rem] max-lg:p-[2.5rem]  max-sm:w-full lg:w-1/2 lg:rounded-s-[2.5rem] ">
             {switchpage ? (
               <Login setSwitchpage={setSwitchpage} />

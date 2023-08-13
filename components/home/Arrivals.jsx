@@ -1,26 +1,26 @@
-import React from 'react'
+import React, { useEffect } from "react";
 import { GiMoebiusStar } from "react-icons/gi";
-// always destructure when importing from reacticons
+import { supabase } from "../../lib/supabaseClient";
+import LatestProductFetch from "@/services/LatestProductFetch";
+// always destructure when importing from react-icons
 
+async function fetchData() {
+
+let { data, error } = await supabase.from("product").select("*");
+
+  console.log(data);
+}
 
 const arrivals = () => {
   return (
     <div>
       <section className="arrivals">
-        <div className="container">
-          <div className="heading d_flex">
-            <div className="heading-left row f_flex">
-              <h2>New Arrivals</h2>
-            </div>
-            <GiMoebiusStar />
-            <div className="heading-right row">
-              <span>view all</span>
-            </div>
-          </div>
-        </div>
+        this is arrival section
+        <LatestProductFetch />
+        <button onClick={fetchData}>fetchData</button>
       </section>
     </div>
   );
-}
+};
 
-export default arrivals
+export default arrivals;

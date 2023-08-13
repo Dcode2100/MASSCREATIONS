@@ -103,7 +103,7 @@ const Herosection = () => {
           </div>
         </SwiperSlide>
       </Swiper>
-     
+
       <div className="swiper-pagination"></div>
     </React.Fragment>
   );

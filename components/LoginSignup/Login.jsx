@@ -3,33 +3,46 @@ import React, { useEffect, useState } from "react";
 import { Ref } from "react";
 import { supabase } from "../../lib/supabaseClient";
 import { useRouter } from "next/router";
+import loginAuthSlice from "../../features/authentication/loginauthslice";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 const Login = ({ setSwitchpage }) => {
-  const router = useRouter();
-  const [user, setUser] = useState(null);
-  const [input, setInput] = useState({
-    email: "",
-    password: "",
-    uuid: "",
-  });
+  const dispatch = useDispatch();
+  const loginAuth = useSelector((state) => state.loginAuth);
+  const [input, setInput] = useState({ email: "", password: "" });
+
   const handleComponentSwitch = () => {
     setSwitchpage((prev) => !prev);
   };
-  function handleInput(e) {
-    const { name, value, phone } = e.target;
 
-    setInput((prevInput) => ({ ...prevInput, [name]: value }));
+  function handleInput(e) {
+    const { name, value } = e.target;
+    setInput((prevInput) => ({
+      ...prevInput,
+      [name]: value,
+    }));
   }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { email, password } = input;
-    const login = await supabase.auth
-      .signUp({
-        email,
-        password,
-      }).then((res) => { 
-          setInput((prevInput) => ({ ...prevInput, uuid: res.user.id }));
-      })
+
+    try {
+      const login = await supabase.auth.signIn({ email, password });
+      dispatch(
+        loginAuthSlice.actions.Login({
+          uuid: login.user.id,
+        })
+      );
+    } catch (error) {
+      // Handle login error here
+      console.error("Login failed:", error.message);
+    }
+    try{
+      const login =  await // add the login feature in this place
+      
+    }
   };
 
   return (
@@ -55,7 +68,7 @@ const Login = ({ setSwitchpage }) => {
           type="text"
           placeholder="Email"
           name="email"
-          value={input.email}
+          value={loginAuth.userEmail}
           onChange={handleInput}
         ></input>
       </div>

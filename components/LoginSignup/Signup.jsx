@@ -7,6 +7,8 @@ import { supabase } from "../../lib/supabaseClient";
 const Signup = ({ setSwitchpage }) => {
   const [uuid, setUuid] = useState("");
   const [showPrompt, setShowPrompt] = useState(false);
+  const [userData, setUserData] = useState({});
+
   const handleComponentSwitch = () => {
     setSwitchpage((prev) => !prev);
   };
@@ -32,18 +34,20 @@ const Signup = ({ setSwitchpage }) => {
       })
       .then((res) => {
         console.log(res.data.user);
+        console.log("from auth", res.data.user.id);
         setUuid(res.data.user.id);
+        const userData = {
+          uuid: res.data.user.id,
+          email: input.email,
+          username: input.username,
+        };
       });
-    const userData = {
-      username: input.username,
-      email: input.email,
-      uuid: uuid,
-    };
+    setUserData(userData);
     const { data, error } = await supabase.from("users").insert([userData]);
     if (error) {
       console.error("Error pushing userdata:", error);
     } else {
-      console.log("Userdata pushed successfully:",uuid);
+      console.log("Userdata pushed successfully:", userData);
     }
   };
 

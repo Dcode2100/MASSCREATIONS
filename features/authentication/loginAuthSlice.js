@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const LoginAuthSlice = createSlice({
+export const LoginAuthSlice = createSlice({
   name: "loginAuth",
   initialState: {
     isAuth: false,
@@ -19,4 +19,3 @@ const LoginAuthSlice = createSlice({
   },
 });
 
-export default LoginAuthSlice

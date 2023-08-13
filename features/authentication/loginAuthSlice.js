@@ -18,3 +18,5 @@ const LoginAuthSlice = createSlice({
     },
   },
 });
+
+export default LoginAuthSlice

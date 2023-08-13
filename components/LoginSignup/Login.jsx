@@ -39,11 +39,7 @@ const Login = ({ setSwitchpage }) => {
       // Handle login error here
       console.error("Login failed:", error.message);
     }
-    try{
-      const login =  await // add the login feature in this place
-      
-    }
-  };
+  }
 
   return (
     <div className="login__center-wrapper m-auto flex flex-col gap-7 sm:w-[100%] lg:w-[65%] ">
@@ -68,7 +64,7 @@ const Login = ({ setSwitchpage }) => {
           type="text"
           placeholder="Email"
           name="email"
-          value={loginAuth.userEmail}
+          value={loginAuth?.userEmail || ""}
           onChange={handleInput}
         ></input>
       </div>

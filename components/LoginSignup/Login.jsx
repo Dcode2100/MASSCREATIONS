@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Ref } from "react";
 import { supabase } from "../../lib/supabaseClient";
 import { useRouter } from "next/router";
-import loginAuthSlice from "../../features/authentication/loginauthslice";
+import LoginAuthSlice from "../../features/authentication/LoginAuthSlice"
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 

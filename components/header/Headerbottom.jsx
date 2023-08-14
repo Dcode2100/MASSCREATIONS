@@ -10,6 +10,7 @@ import Carthover from "./Carthover";
 import { useDispatch } from "react-redux";
 import { openCart, closeCart, addToCart } from "../../features/cart/cartSlice";
 import { supabase } from "../../lib/supabaseClient"
+import Link from "next/link";
 
 const Headerbottom = ({ smsidemenu, setSmsidemenu }) => {
   // const [username, setUsername] = useState("");
@@ -44,7 +45,7 @@ const Headerbottom = ({ smsidemenu, setSmsidemenu }) => {
               </button>
             }
           </div>
-          <h1>KEYPINI</h1>
+          <Link href={"/"}>KEYPINI</Link>
         </div>
         <div className="links flex h-full list-none items-center">
           {navlinks.map((link, index) => (

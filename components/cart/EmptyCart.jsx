@@ -8,7 +8,6 @@ const EmptyCart = () => {
     <div>
       <Cartheadermsg />
 
-      
       <div className=" relative mt-7">
         <div className="relative m-auto h-[15rem] w-[50%] bg-green-500 object-contain ">
           <Image

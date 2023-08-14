@@ -13,27 +13,26 @@ var settings = {
   slidesToShow: 1,
   slidesToScroll: 1,
   arrows: false,
+  fade: true,
+  
 };
 
 const Headertop = () => {
-  
-
- 
   return (
     <div
-      className={`relative  flex items-center justify-center bg-green-600 px-4 transition-all duration-500 h-[2rem] `}
+      className={`relative  flex h-[2rem] items-center justify-center bg-green-600 px-4 transition-all duration-500 `}
     >
-      <div
-        className={`duration-600 relative w-[100%]`}
-      >
+      <div className={`duration-600 relative w-[100%]`}>
         <Slider {...settings}>
           <div className=" w-full text-center">
             <h3 className="max-xs:text-[0.8rem]">
               The sale is on check out the latest offers in all our sections
             </h3>
           </div>
-          <div className=" w-full text-center">
-            <h3>Checkout the latest deals going on</h3>
+          <div className=" w-full text-center ">
+            <h3 className="max-xs:text-[0.8rem]">
+              Checkout the latest deals going on
+            </h3>
           </div>
         </Slider>
       </div>

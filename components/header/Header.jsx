@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from "react";
-import Percentoff from "./Percentoff";
+import React, { useState } from "react";
 import Headerbottom from "./Headerbottom";
 import Headertop from "./Headertop";
 import Headercenter from "./Headercenter";
-import Dropdown from "./Dropdown";
 import Sidenav from "./Sidenav.jsx";
 import { useSelector } from "react-redux";
 import Cart from "../cart/Cart";
@@ -11,18 +9,18 @@ const Header = () => {
   const [smsidemenu, setSmsidemenu] = useState(false);
   const isOpen = useSelector((state) => state.cart.isOpen);
   const [isHeaderTopVisible, setIsHeaderTopVisible] = useState(true);
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
-      setIsHeaderTopVisible(scrollTop <= 0);
-    };
-    // the window is given the scroll event listener and if there is scroll then execute the handleScroll function,
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const scrollTop =
+  //       window.pageYOffset || document.documentElement.scrollTop;
+  //     setIsHeaderTopVisible(scrollTop <= 0);
+  //   };
+  //   // the window is given the scroll event listener and if there is scroll then execute the handleScroll function,
 
-    window.addEventListener("scroll", handleScroll);
-    // return the window with the scroll event listener
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  //   window.addEventListener("scroll", handleScroll);
+  //   // return the window with the scroll event listener
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
   return (
     <div
       className={`header-child-wrapper relative transition-all duration-300 ${
@@ -39,7 +37,7 @@ const Header = () => {
 
       <Headerbottom smsidemenu={smsidemenu} setSmsidemenu={setSmsidemenu} />
       <div
-        className={`cart-wrapper z-1  absolute right-0 top-0 translate-x-[100%] transition-all duration-500 ${
+        className={`cart-wrapper z-1  max-sm:w-full absolute right-0 top-0 translate-x-[100%] transition-all duration-500 ${
           isOpen ? "header-cart-open" : ""
         }`}
       >

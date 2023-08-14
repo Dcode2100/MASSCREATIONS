@@ -6,9 +6,10 @@ import Rating from "@mui/material/Rating";
 import { Button } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { addToCart, total} from "../../features/cart/cartSlice";
+import { Label } from "@mui/icons-material";
 
 const Productcard = (carddata) => {
-  const { id,Images, alt, title, rating, price } =
+  const { id,images, alt, title, rating, price } =
     carddata.carddata;
   const dispatch = useDispatch();
   const addProduct = (product) => {
@@ -17,29 +18,31 @@ const Productcard = (carddata) => {
   }
   
   return (
-    <Card className="relative border-2  object-contain px-6 py-6">
-      <div className="mb-3 flex justify-between">
-        <Typography variant="body2">LABEL</Typography>
-        <Rating
-          name="read-only"
-          style={{ fontSize: "15px" }}
-          value={rating}
-          readOnly
-        />
-      </div>
+    <Card className="relative border-2 w-[300px] max-xs:w-[185px] object-cover px-5 py-4">
+     
       <CardMedia
         component="img"
-        image={Images}
+        image={images}
         alt={alt}
-        className="m-auto h-[11rem] w-[100%] object-contain object-center "
+        className="m-auto h-[15rem] max-xs:h-[7rem] w-[100%] object-cover object-bottom "
       />
-      <div className="mb-1 mt-3 w-full">
-        <Typography variant="h6" className="relative  w-full pl-1">
+      
+      <div className="mt-3">
+      <div className="bg-green-700 w-min px-2 py-0.5  mb-2 text-[11px]" >LABEL</div>
+        <Rating
+          name="read-only"
+          style={{ fontSize: "16px" }}
+          value={rating}
+          readOnly
+        />  
+      </div>
+      <div className="mb-1  w-full">
+        <Typography variant="h6" className="relative  w-full ">
           {title}
         </Typography>
       </div>
       <div className="mb-3 flex ">
-        <Typography variant="body2" className="relative  w-full pl-1">
+        <Typography variant="body2" className="relative  w-full ">
           RS. {price}/-
         </Typography>
         <Typography
@@ -56,15 +59,17 @@ const Productcard = (carddata) => {
           save {40}%
         </Typography>
       </div>
+    
 
       <Button
         variant="oultlined"
         sx={{ "&:hover": { backgroundColor: "#000000" } }}
-        className="border-3 hover:bg w-full border-blue-600 bg-black text-white"
+        className="border-3 px-6 hover:bg w-full border-blue-600 bg-black max-xs:text-xs max-xs:py-2 text-white"
         onClick={() => addProduct(carddata.carddata)}
       >
         Add to cart
       </Button>
+   
     </Card>
   );
 };

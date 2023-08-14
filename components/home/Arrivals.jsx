@@ -1,26 +1,31 @@
 import React, { useEffect } from "react";
-import { GiMoebiusStar } from "react-icons/gi";
 import { supabase } from "../../lib/supabaseClient";
 import LatestProductFetch from "@/services/LatestProductFetch";
-// always destructure when importing from react-icons
+import Productlist from "../cardscomp/Productlist";
 
-async function fetchData() {
+const Arrivals = ({ products, error }) => {
+  const [product, setProduct] = React.useState([]);
+  useEffect(() => {
+    async function getProducts() {
+      let { data, error } = await supabase
+        .from("product")
+        .select("*")
+        .eq("rating", 5); 
+     setProduct(data);
+   
+    }
+    getProducts();
+  
+  }, []);
 
-let { data, error } = await supabase.from("product").select("*");
-
-  console.log(data);
-}
-
-const arrivals = () => {
   return (
     <div>
       <section className="arrivals">
-        this is arrival section
-        <LatestProductFetch />
-        <button onClick={fetchData}>fetchData</button>
+        <h2 className="text-center py-4 max-xs:hidden">Best Selling Products</h2>
+        <Productlist data={product} />
       </section>
     </div>
   );
 };
 
-export default arrivals;
+export default Arrivals;

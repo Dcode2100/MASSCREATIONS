@@ -1,15 +1,16 @@
 import React from "react";
 import Productcard from "../cardscomp/Productcard";
+import Grid from "@mui/material/Grid";
 
 const Productlist = ({ data }) => {
   return (
-    <div className=" relative m-auto  flex w-[80%] flex-wrap">
+    <Grid container spacing={2} justifyContent="center">
       {data.map((card) => (
-        <div key={card.id} className="w-1/4 flex-wrap ">
+        <Grid key={card.id} item>
           <Productcard carddata={card} />
-        </div>
+        </Grid>
       ))}
-    </div>
+    </Grid>
   );
 };
 

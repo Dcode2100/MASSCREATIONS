@@ -8,7 +8,6 @@ function index() {
   return (
     <div className="index-wrapper">
       <Herosection />
-    
       <Arrivals />
     </div>
   );

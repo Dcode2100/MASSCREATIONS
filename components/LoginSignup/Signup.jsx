@@ -3,6 +3,7 @@ import { FaUserAlt, FaUserMinus } from "react-icons/fa";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import { supabase } from "../../lib/supabaseClient";
+import { createClient } from "@supabase/supabase-js";
 
 const Signup = ({ setSwitchpage }) => {
   const [uuid, setUuid] = useState("");

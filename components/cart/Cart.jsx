@@ -18,7 +18,7 @@ const Cart = () => {
  
   return (
     <div
-      className={`relative h-[100vh] w-[27rem] overflow-y-auto bg-slate-100 transition-shadow duration-500 z-1 ${isOpen ? "shadow-2xl" : ""} `}
+      className={`cart relative h-[100vh] sm:w-[27rem] w-full overflow-y-auto bg-slate-100 transition-shadow duration-500 z-1 ${isOpen ? "shadow-2xl" : ""} `}
     >
       <Box sx={{ width: "100%" }} className="flex justify-between  py-3 ">
         <h2 className="pl-4 text-2xl">CART</h2>
@@ -28,7 +28,7 @@ const Cart = () => {
         />
       </Box>
       <div className="h-[0.5px] bg-slate-500"></div>
-      <Box className=" pt-5">
+      <Box className=" pt-5 ">
         {products.length === 0 ? (
           <EmptyCart />
         ) : (

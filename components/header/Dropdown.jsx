@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 const Dropdown = ({ items }) => {
   return (
-    <div className="dropdown duration-600 absolute z-10 flex h-min w-full justify-center gap-10 bg-gray-300 px-40 py-12 pb-16 ">
+    <div className="dropdown dropdown_animation duration-600 absolute z-10 flex h-min w-full justify-center gap-10 bg-gray-300 px-40 py-12 pb-16 ">
       {items.submenu &&
         items.submenu.map((sub, index) => {
           return (

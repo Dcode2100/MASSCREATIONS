@@ -14,7 +14,7 @@ const Menutoggle = ({ items, index, setDrop }) => {
     >
       <a
         key={index}
-        className=" text-md flex h-full items-center justify-center text-black"
+        className=" text-md flex h-full items-center justify-center cursor-pointer text-black"
         href={items.path}
       >
         {items.title}

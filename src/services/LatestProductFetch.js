@@ -1,16 +1,15 @@
 import React from "react";
 import { supabase } from "../../lib/supabaseClient";
 
-const LatestProductFetch = ({ data }) => {
-  console.log(data);
+const LatestProductFetch = ({ products }) => {
+  console.log(products);
   return (
     <div>
       <h2>Latest Products</h2>
-      {data &&
-        data.map((product) => (
+      {products &&
+        products.map((product) => (
           <div key={product.id}>
             <h3>{product.title}</h3>
-
             {/* Add other product information here */}
           </div>
         ))}
@@ -22,10 +21,13 @@ export default LatestProductFetch;
 
 export async function getServerSideProps() {
   // Fetch data from the "product" table
-  let { data, error } = await supabase.from("product").select("*");
+  let { data: products, error } = await supabase
+    .from("product")
+    .select("*")
+    .eq("rating", 5);
 
-  if (data) {
-    console.log("Products:", product);
+  if (products) {
+    console.log("Products:", products);
   }
   if (error) {
     console.log("Error:", error);
@@ -33,7 +35,7 @@ export async function getServerSideProps() {
 
   return {
     props: {
-      data, // Pass the fetched products as props
+      products, // Pass the fetched products as props
       error,
     },
   };

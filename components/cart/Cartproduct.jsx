@@ -41,10 +41,10 @@ const Cartcards = ({ product }) => {
     <div className="relative my-4 flex  h-[8rem] justify-between  ">
       <div className="relative aspect-video w-[30%] object-contain">
         <Image
-          src={product.Images}
+          src={product.images}
           className="absolute inset-0 h-[80%] w-[100%] object-contain "
-          width={100}
-          height={100}
+          fill
+         sizes="(max-width: 768px) height:100%,"
           quality={100}
           priority
           alt="anyimg"
@@ -55,7 +55,7 @@ const Cartcards = ({ product }) => {
         className=" flex h-full
        w-[67%] flex-col  gap-1   "
       >
-        <h1 className="uppercase font-medium whitespace-nowrap text-[1.1rem] text-slate-700">
+        <h1 className="whitespace-nowrap text-[1.1rem] font-medium uppercase text-slate-700">
           {product.title}
         </h1>
         <div className="flex gap-[5%] font-bold">
@@ -125,7 +125,7 @@ const Cartproduct = () => {
             : console.log("product is not defined")}
         </div>
       </div>
-      <div className="flex-end relative h-min  flex w-full justify-between border-t-2 border-slate-400">
+      <div className="flex-end relative flex  h-min w-full justify-between border-t-2 border-slate-400">
         <div className=" m-auto my-4 flex w-[88%] flex-col gap-3">
           <h3 className="text-xs font-light">
             Shipping & taxes calculated at checkout

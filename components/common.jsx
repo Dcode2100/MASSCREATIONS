@@ -1,8 +1,7 @@
 export const navlinks = [
-  { title: "LATEST", path: "/" },
+  { title: "HOME", path: "/" },
   {
     title: "COLLECTIONS",
-    path: "/collections",
     submenu: [
       {
         title: "KEYCHAINS",

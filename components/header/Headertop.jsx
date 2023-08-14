@@ -25,12 +25,12 @@ const Headertop = () => {
       <div className={`duration-600 relative w-[100%]`}>
         <Slider {...settings}>
           <div className=" w-full text-center">
-            <h3 className="max-xs:text-[0.8rem]">
+            <h3 className="max-sm:text-[0.8rem]">
               The sale is on check out the latest offers in all our sections
             </h3>
           </div>
           <div className=" w-full text-center ">
-            <h3 className="max-xs:text-[0.8rem]">
+            <h3 className="max-sm:text-[0.8rem]">
               Checkout the latest deals going on
             </h3>
           </div>

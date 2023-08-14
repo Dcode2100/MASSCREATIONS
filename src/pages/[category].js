@@ -24,8 +24,8 @@ const DynamicCategory = ({ product, error }) => {
         }`}
         onClick={handleCloseCart}
       ></div>
-      <h1 className="  flex items-center max-xs:hidden justify-center pb-4 pt-4 text-3xl uppercase text-center">
-        {category} Keychain Category
+      <h1 className="  flex items-center  justify-center pb-4 pt-4 text-3xl uppercase text-center">
+        {category} Keychains
       </h1>
       <div className="pb-8">
         <Productlist data={product} />

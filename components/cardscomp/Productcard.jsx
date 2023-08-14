@@ -18,13 +18,13 @@ const Productcard = (carddata) => {
   }
   
   return (
-    <Card className="relative border-2 w-[300px] max-xs:w-[185px] object-cover px-5 py-4">
+    <Card className="relative border-2 w-[300px] max-sm:w-[185px] object-cover px-5 py-4">
      
       <CardMedia
         component="img"
         image={images}
         alt={alt}
-        className="m-auto h-[15rem] max-xs:h-[7rem] w-[100%] object-cover object-bottom "
+        className="m-auto h-[15rem] max-sm:h-[7rem] w-[100%] object-cover object-bottom "
       />
       
       <div className="mt-3">
@@ -48,7 +48,7 @@ const Productcard = (carddata) => {
         <Typography
           variant="body2"
           sx={{ textDecoration: "line-through" }}
-          className="relative  w-full pl-1 text-blue-600"
+          className="relative max-sm:hidden w-full pl-1 text-blue-600"
         >
           RS. {price}/-
         </Typography>
@@ -63,8 +63,8 @@ const Productcard = (carddata) => {
 
       <Button
         variant="oultlined"
-        sx={{ "&:hover": { backgroundColor: "#000000" } }}
-        className="border-3 px-6 hover:bg w-full border-blue-600 bg-black max-xs:text-xs max-xs:py-2 text-white"
+        sx={{ "&:hover": { backgroundColor: "#000000",color:"white" } }}
+        className="border-3 px-6 hover:bg w-full border-blue-600 bg-black max-sm:text-xs max-xs:py-2 text-white"
         onClick={() => addProduct(carddata.carddata)}
       >
         Add to cart

@@ -5,7 +5,7 @@ const Headercenter = () => {
     <div>
       <div className="Header relative flex h-[2.5rem] w-full items-center justify-end  ">
         <div className=" h-full w-min whitespace-nowrap ">
-          <ul className="flex h-full  ">
+          <ul className="flex h-full overflow-x-auto ">
             <li className="flex items-center border-r-2 border-black px-3 transition-all hover:text-blue-400">
               <h3>CallUs - 7678096369</h3>
             </li>

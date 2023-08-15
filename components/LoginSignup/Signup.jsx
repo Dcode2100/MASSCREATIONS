@@ -18,6 +18,7 @@ const Signup = ({ setSwitchpage }) => {
     username: "",
     email: "",
     password: "",
+    phone: "",
   });
   // function for Handle input change
   function handleInput(e) {
@@ -27,29 +28,28 @@ const Signup = ({ setSwitchpage }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { email, password } = input;
-    const signup = await supabase.auth
-      .signUp({
-        email,
-        password,
-      })
-      .then((res) => {
-        console.log(res.data.user);
-        console.log("from auth", res.data.user.id);
-        setUuid(res.data.user.id);
-        const userData = {
-          uuid: res.data.user.id,
-          email: input.email,
-          username: input.username,
-        };
-      });
-    setUserData(userData);
-    const { data, error } = await supabase.from("users").insert([userData]);
-    if (error) {
-      console.error("Error pushing userdata:", error);
-    } else {
-      console.log("Userdata pushed successfully:", userData);
-    }
+    const { username, email, password } = input;
+    const { user, session, error } = await supabase.auth.signUp(
+      {
+        email: email,
+        password: password,
+      },
+      {
+        data: {
+          username: username,
+          phone: "784552687",
+          email: email,
+        },
+      }
+    );
+    console.log(user, session, error);
+    // NO NEED TO SET THE USER DATA IN THE SEPERATE TABLE SUPABASE ALREADY HAVE META DATA SECTION WHICH STORES THIS EXTRA DATA PASED IN A TABLE WITH THE USER ID AND PASS.  TO ACCESS OR UPDATE THE DATA BELOW IS THE METHOD PROVIDED BY SUPABASE
+    // const { data: { user } } = await supabase.auth.getUser()
+    // const { data, error } = await supabase.auth.updateUser({
+    //   email: "new@email.com",
+    //   password: "new-password",
+    //   data: { hello: 'world' }
+    // })
   };
 
   return (

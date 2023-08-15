@@ -11,7 +11,7 @@ import { useDispatch } from "react-redux";
 import { openCart, closeCart, addToCart } from "../../features/cart/cartSlice";
 import { supabase } from "../../lib/supabaseClient"
 import Link from "next/link";
-
+import { useSelector } from "react-redux";
 const Headerbottom = ({ smsidemenu, setSmsidemenu }) => {
   // const [username, setUsername] = useState("");
   // useEffect(() => { 
@@ -28,7 +28,7 @@ const Headerbottom = ({ smsidemenu, setSmsidemenu }) => {
   const handleMouseClick = () => {
     dispatch(openCart());
   };
-
+  const userName = useSelector((state) => state.loginAuth.userName);
   const [drop, setDrop] = useState(null);
 
   return (
@@ -63,7 +63,7 @@ const Headerbottom = ({ smsidemenu, setSmsidemenu }) => {
               style={{ fontSize: "1.5rem" }}
               className="cursor-pointer transition-all hover:scale-105"
             />
-            {/* <h2>{username? username : ""}</h2>*/}
+            <h6>{userName? userName : ""}</h6>
           
           </a>
           <div

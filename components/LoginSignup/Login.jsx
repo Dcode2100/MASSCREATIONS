@@ -5,10 +5,12 @@ import { supabase } from "../../lib/supabaseClient";
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
+import { login } from "../../features/authentication/loginAuthSlice";
+import storage from "redux-persist/lib/storage";
 
 const Login = ({ setSwitchpage }) => {
   const dispatch = useDispatch();
-  const loginAuth = useSelector((state) => state.loginAuth);
+  const router = useRouter();
   const [input, setInput] = useState({ email: "", password: "" });
 
   const handleComponentSwitch = () => {
@@ -26,19 +28,32 @@ const Login = ({ setSwitchpage }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { email, password } = input;
-
+  
     try {
-      const login = await supabase.auth.signIn({ email, password });
-      dispatch(
-        loginAuthSlice.actions.Login({
-          uuid: login.user.id,
-        })
-      );
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+      if (error) {
+        console.error("Login failed:", error.message);
+      } else {
+        console.log("User logged in:", data);
+        dispatch(
+          login({
+            uuid: data.user.id,
+            username: data.username,
+            email: data.user.email,
+          })
+        );
+        router.push("/"); 
+      }
     } catch (error) {
-      // Handle login error here
-      console.error("Login failed:", error.message);
+      // Handle unexpected errors here (e.g., network errors)
+      console.error("An unexpected error occurred:", error.message);
     }
-  }
+  };
+  
+  
 
   return (
     <div className="login__center-wrapper m-auto flex flex-col gap-7 sm:w-[100%] lg:w-[65%] ">
@@ -63,19 +78,19 @@ const Login = ({ setSwitchpage }) => {
           type="text"
           placeholder="Email"
           name="email"
-          value={loginAuth?.userEmail || ""}
+          value={input.email}
           onChange={handleInput}
-        ></input>
+        />
       </div>
       <div className="input-wrapper  ">
         <input
-          type="alpha-numeric"
+          type="password"
           className="input"
           name="password"
           placeholder="Password"
           value={input.password}
           onChange={handleInput}
-        ></input>
+        />
       </div>
       <button
         onClick={handleSubmit}

@@ -1,21 +1,34 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const LoginAuthSlice = createSlice({
+const initialState = {
+  isAuth: false,
+  userName: "not logged in",
+  userEmail: "",
+  userUuid: "",
+};
+
+const loginAuthSlice = createSlice({
   name: "loginAuth",
-  initialState: {
-    isAuth: false,
-    userName: "",
-    userEmail: "",
-    userUuid: "",
-  },
+  initialState,
   reducers: {
-    Login: (state, action) => {
+    login: (state, action) => {
+      const { uuid, username, email } = action.payload;
+      state.isAuth = true;
+      state.userUuid = uuid;
+      state.userName = email || initialState.userName; // Use initial state's userName if username is not provided
+      state.userEmail = email;
+    },
+    logout: (state) => {
       state.isAuth = false;
-      state.userName = action.payload.username;
-      state.userEmail = action.payload.email;
-      state.userUuid = action.payload.uuid;
-      state.password = action.payload.password;
+      state.userUuid = "";
+      state.userName = "";
+      state.userEmail = "";
     },
   },
 });
 
+// Export individual actions for dispatching
+export const { login, logout } = loginAuthSlice.actions;
+
+// Export the reducer function
+export default loginAuthSlice.reducer;

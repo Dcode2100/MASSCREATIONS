@@ -5,7 +5,7 @@ import Grid from "@mui/material/Grid";
 const Productlist = ({ data }) => {
   return (
     <Grid container spacing={2} justifyContent="center">
-      {data.map((card) => (
+      {data && data.map((card) => (
         <Grid key={card.id} item>
           <Productcard carddata={card} />
         </Grid>
